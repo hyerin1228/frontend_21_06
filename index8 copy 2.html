@@ -1,0 +1,657 @@
+<html>
+
+<head>
+
+    <!-- Anti-flicker snippet (recommended)  -->
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 메인배너 슬라이더 -->
+    <script type="text/javascript" href="slick.min.js"></script>
+    <!-- 사이트에서 가져온 CSS -->
+    <link rel="stylesheet" type="text/css" href="styles6.css">
+    <link rel="stylesheet" type="text/css" href="slick.css">
+    <link rel="stylesheet" type="text/css" href="slick-theme.css">
+
+
+</head>
+
+<body>
+    <div class="container" id="plabContainer">
+        <div class="navbar" id="navbar-main">
+            <div class="navContainer home">
+                <div class="newLogo">
+                    <a href="/"><img src="https://plab-football.s3.amazonaws.com/static/img/logo.svg" alt="플랩풋볼"></a>
+                </div>
+                <div class="top--menu" id="userMenu">
+                    <!-- <div class="">
+                    <input id="searchId" placeholder="지역, 구장">
+                    <span id="searchBtn" onclick="getSearch()">검색</span>
+                  </div> -->
+
+                    <div class="mainTab">
+                        <!-- <a href="/mypage/myrecord/">
+                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_plabfit.svg" alt="플랩핏">
+                      </a> -->
+                        <a href="/mypage/myplab/">
+                            <img src="https://plab-football.s3.amazonaws.com/static/img/ic_mymatch.svg" alt="나의 매치">
+                            <transition name="fade" v-if="waitReviews">
+                                <div class="filter__toast">매치 후기를 남겨주세요!</div>
+                            </transition>
+                        </a>
+                        <a href="/mypage/">
+                            <img src="https://plab-football.s3.amazonaws.com/static/img/ic_my.svg" alt="나의 플랩풋볼">
+                        </a>
+                    </div>
+
+                    <div id="sidebar-main-trigger" class="icon">
+                        <div class="moreIconWrap">
+                            <div class="moreIcon"></div>
+                            <div class="moreIcon"></div>
+                            <div class="moreIcon"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar main" id="sidebar-main">
+            <div class="wrapper">
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="/about/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about.svg" alt="플랩풋볼 소개">
+                                <span>플랩풋볼 소개</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/manager/apply/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about_manager.svg"
+                                    alt="플랩풋볼 매니저 지원">
+                                <span>매니저 지원</span>
+                            </a>
+                        </li>
+                        <!--
+                    <li>
+                      <a href="/partnership/">
+                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about.svg">
+                        <span>구장 제휴 안내</span>
+                      </a>
+                    </li>-->
+                        <li class="separateLine"></li>
+                        <li>
+                            <a href="/cs/6/topics/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_notice.svg" alt="공지사항">
+                                <span>공지사항</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/cs/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_help.svg" alt="자주 묻는 질문">
+                                <span>자주 묻는 질문</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://pf.kakao.com/_xmxhlAC">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_1on1.svg" alt="1:1 문의">
+                                <span>1:1 문의</span>
+                            </a>
+                        </li>
+                        <li class="separateLine"></li>
+                        <p class="sideSub">SNS에서 플랩풋볼의 스토리를 들어보세요</p>
+                        <li class="submenu">
+                            <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                                target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_fb.svg" alt="플랩풋볼 페이스북">
+                                <span>페이스북</span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_fbgroup.svg"
+                                    alt="플랩풋볼 페이스북 그룹">
+                                <span>페이스북 그룹</span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="https://www.instagram.com/plabfootball/" target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_ig.svg" alt="플랩풋볼 인스타그램">
+                                <span>인스타그램</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="app">
+            <div class="navigation--container">
+                <div class="navigation--wrapper">
+                    <div class="navigation--item">
+                        <a class="selected" href="/">소셜 매치</a>
+                        <a href="/rental/">
+                            구장 예약
+                            <span class="is_new">N</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel--container">
+                <ul class="carousel--wrapper">
+                    <li v-for="mainBanner in mainBanners" class="carousel--hero" :key="mainBanner.id">
+                        <a :href="mainBanner.link">
+                            <div class="carousel--img">
+                                <img :src="mainBanner.image_m" class="carousel--img_m">
+                                <img :src="mainBanner.image" class="carousel--img_pc">
+                            </div>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="target-banner" v-if="userLevel != null">
+                <a class="target-banner__item--mid" href="/explore/3/matches/" v-if="userLevel >= 3">
+                    <p>더 빠르고 수준 높은 <strong>중급(Lv 3~5) 매치</strong>에 참여해보세요</p>
+                    <i class="arrow right"></i>
+                </a>
+                <a class="target-banner__item--beginner" href="/explore/22/matches/" v-else-if="userLevel < 2">
+                    <p>일반 매치가 부담스럽다면 <strong>초급(Lv 1~2) 매치</strong>에 참여해보세요</p>
+                    <i class="arrow right"></i>
+                </a>
+            </div>
+            <div class="main--match--container">
+                <div id="dateNav" class="sub-header">
+                    <div class="tabWrap">
+                        <div class="swipe-tabs">
+                            <ul class="swipe-tab">
+                                <li v-for="(day, index) in matchDays" :key="day.id" class="dateWrap slick-slide"
+                                    :class="{ isActive: day.is_current == true, 'slick-active': day.is_current == true, 'slick-slide': day.is_current == true, isSat: day.yoil == '토', isSun: day.yoil == '일' }"
+                                    @click="dateMatches(day.year+'-'+day.month+'-'+day.day, index)">
+                                    <p class="">[[ day.day ]]</p>
+                                    <span class="">[[ day.yoil ]]</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__filter">
+                    <div class="main__match-filter">
+                        <ul v-if="runBounce">
+
+                            <li>
+                                <a @click="fetchMatches(null)"
+                                    :class="{'match-filter-item--active': selectRegion == 'me' || selectRegion == null}">내
+                                    경기장</a>
+                            </li>
+
+                            <li v-for="region in currentRegions">
+                                <a @click="fetchMatches(region.id)"
+                                    :class="{'match-filter-item--active': region.id == selectRegion}">[[ region.name
+                                    ]]</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="main--match--filter">
+                        <div class="filter--results">
+                            <p v-show="currentMatchesNum != 0"><strong>[[ currentMatchesNum ]]</strong>개의 매치</p>
+                        </div>
+                        <div class="filter--wrapper">
+                            <span v-if="selectRegion == null || selectRegion == 'me'"
+                                @click="fetchStadiums(); showFilterMyStadiums = !showFilterMyStadiums">내 경기장 편집
+                                <transition name="fade" v-if="newStadiumToast">
+                                    <div class="filter__toast">새로운 경기장이 있습니다</div>
+                                </transition>
+                            </span>
+                            <span @click="showFilterMatch = !showFilterMatch" v-if="noFilters">모든 매치</span>
+                            <span @click="showFilterMatch = !showFilterMatch" v-if="!noFilters" class="isFilter">선택
+                                매치</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="list--match-schedule--container">
+                    <ul>
+                        <div class="list--match--loader" v-if="isLoading">
+                            <div class="loader">
+                                <div class="loadDot"></div>
+                            </div>
+                        </div>
+                        <li class="list--match-schedule--item" v-for="(match, index) in currentMatches.results"
+                            v-show="!isLoading" v-if="match.schedule >= now" :class="{'hide': match.id == 53057}">
+                            <a @click="goToMatch(match.id)">
+                                <div class="list--match-schedule__time">
+                                    <p>[[ matchTime(match.schedule) ]]</p>
+                                </div>
+
+                                <div class="list--match-schedule__info">
+                                    <p class="match--label match--label_cup" v-if="match.type == 'cup'">원데이리그</p>
+                                    <p class="match--label match--label_coupon" v-if="match.is_coupon">첫 참가 무료 쿠폰</p>
+                                    <div class="match-list__title">
+                                        <h3>[[ match.label_title ]]</h3>
+                                        <span v-if="match.is_new_stadium" class="match-list__label--new">N</span>
+                                    </div>
+                                    <div class="label--match-option">
+                                        <span v-if="match.sex == 1" class="match--option isMen">남성</span>
+                                        <span v-else-if="match.sex == 0" class="match--option isMix">남녀모두</span>
+                                        <span v-else-if="match.sex == -1" class="match--option isWomen">여성</span>
+                                        <span v-if="match.player_cnt == 5">5vs5</span>
+                                        <span v-else-if="match.player_cnt == 6">6vs6</span>
+                                        <span v-if="match.type == '3teams' || match.player_cnt == 5">3파전</span>
+                                        <span v-else-if="match.type == 'match'">매치</span>
+                                        <span v-else-if="match.type == 'cup'">리그</span>
+                                        <span v-if="match.level == 0">일반 (Lv 1~5)</span>
+                                        <span v-else-if="match.level == 1" class="match--option is_beginner">초급 (Lv
+                                            1~2)</span>
+                                        <span v-else-if="match.level == 2" class="match--option is_mid">중급 (Lv
+                                            3~5)</span>
+                                        <span v-if="match.is_rec == true">🎥영상촬영</span>
+                                        <span v-if="match.test_type == 1">스코어링</span>
+                                        <span class="match--option is_nomanager"
+                                            v-if="match.test_type == 4">플래버매치</span>
+                                    </div>
+                                </div>
+
+                                <div class="list--match-schedule__status">
+                                    <div class="match-status isFull" v-if="match.apply_status == 'full'">
+                                        <p>마감</p>
+                                    </div>
+                                    <div class="match-status isHurry" v-else-if="match.apply_status == 'hurry'">
+                                        <p>마감임박!</p>
+
+                                    </div>
+                                    <div class="match-status isOpen" v-else-if="match.apply_status == 'available'">
+                                        <p>신청가능</p>
+
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a v-for="mainListBanner in mainListBanners" :href="mainListBanner.link"
+                                v-if="index == mainListBanner.orderCondition" class="list--match--banner"
+                                :style="{'background-color': mainListBanner.bg_color, 'color': mainListBanner.text_color}">
+                                <div class="list--match--banner--script">
+                                    <h4>[[ mainListBanner.title ]]</h4>
+                                    <p>[[ mainListBanner.desc ]]</p>
+                                </div>
+                                <div class="list--match--banner--emoji">
+                                    <h2>[[ mainListBanner.emoji ]]</h2>
+                                </div>
+                            </a>
+
+                        </li>
+                        <div class="list--match-schedule__noItem" v-if="currentMatchesNum == 0">
+                            <h3>등록된 매치가 없습니다</h3>
+                            <p>다른 날짜 혹은 다른 검색 조건을 적용해보세요 :)</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal--container" v-if="showFilterMatch" v-cloak>
+                <div class="modal--mask" @click="showFilterMatch = false">
+                </div>
+                <div class="modal--wrapper isFull">
+                    <div class="modal--header">
+                        <p class="modal--title">카테고리</p>
+                        <p class="modal--close" @click="showFilterMatch = false">취소</p>
+                    </div>
+                    <div class="modal--body">
+                        <div class="filter--region">
+                            <div class="filter--region--item">
+                                <!-- <span class="btn long md is--selected">모두 선택</span> -->
+                                <ul class="filter--list">
+                                    <h4>성별</h4>
+                                    <li>
+                                        <input type="checkbox" v-model="checkedSex" class="filterCheck grey" id="sex_m"
+                                            value="1">
+                                        <label for="sex_m" class="checkLabel">남성</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" v-model="checkedSex" class="filterCheck grey" id="sex_w"
+                                            value="-1">
+                                        <label for="sex_w" class="checkLabel">여성</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" v-model="checkedSex" class="filterCheck grey" id="sex_u"
+                                            value="0">
+                                        <label for="sex_u" class="checkLabel">남녀 모두</label>
+                                    </li>
+                                </ul>
+                                <!-- <ul class="filter--list">
+                                <h4>개인/팀</h4>
+                                <li>
+                                <input type="checkbox" v-model="checkedType" class="filterCheck grey" id="type_match" value="match">
+                                <label for="type_match" class="checkLabel">개인</label>
+                                </li>
+                                <li>
+                                <input type="checkbox" v-model="checkedType" class="filterCheck grey" id="type_cup" value="cup">
+                                <label for="type_cup" class="checkLabel">팀</label>
+                                </li>
+                            </ul> -->
+                                <!-- <ul class="filter--list">
+                                <h4>실내/실외</h4>
+                                <li>
+                                <input type="checkbox" class="filterCheck grey" id="ino_i">
+                                <label for="ino_i" class="checkLabel">실내</label>
+                                </li>
+                                <li>
+                                <input type="checkbox" class="filterCheck grey" id="ino_o">
+                                <label for="ino_o" class="checkLabel">실외</label>
+                                </li>
+                            </ul> -->
+                                <ul class="filter--list">
+                                    <h4>레벨</h4>
+                                    <li>
+                                        <input type="checkbox" v-model="checkedLevel" class="filterCheck grey"
+                                            id="level_beginner" value="1">
+                                        <label for="level_beginner" class="checkLabel">초급 (Lv 1~2)</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" v-model="checkedLevel" class="filterCheck grey"
+                                            id="level_mid" value="2">
+                                        <label for="level_mid" class="checkLabel">중급 (Lv 3~5)</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" v-model="checkedLevel" class="filterCheck grey"
+                                            id="level_every" value="0">
+                                        <label for="level_every" class="checkLabel">일반 (Lv 1~5)</label>
+                                    </li>
+                                </ul>
+                                <!-- <ul class="filter--list">
+                                <h4>경기 인원</h4>
+                                <li>
+                                <input type="checkbox" name="regionCheck[]" class="filterCheck grey" id="regionID">
+                                <label for="regionID" class="checkLabel">5vs5</label>
+                                </li>
+                                <li>
+                                <input type="checkbox" name="regionCheck[]" class="filterCheck grey" id="regionID">
+                                <label for="regionID" class="checkLabel">6vs6</label>
+                                </li>
+                                <li>
+                                <input type="checkbox" name="regionCheck[]" class="filterCheck grey" id="regionID">
+                                <label for="regionID" class="checkLabel">8vs8</label>
+                                </li>
+                            </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal--bottom">
+                        <div class="modal--button">
+                            <span class="btn full yellow lg" v-on:click="filterMatches">적용하기</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal--container" v-if="showFilterMyStadiums" v-cloak>
+                <div class="modal--mask" @click="showFilterMyStadiums = false">
+                </div>
+                <div class="modal--wrapper isFull">
+                    <div class="modal--header">
+                        <p class="modal--title">내 경기장 편집하기</p>
+                        <p class="modal--close" @click="showFilterMyStadiums = false, 
+                isAllChecked = []">취소</p>
+                    </div>
+                    <div class="modal--body">
+                        <div class="filter--favorite">
+                            <ul v-for="(regions, index) in allStadiums" class="filter--fav--region"
+                                v-if="regions.stadium_list.length != 0">
+                                <div class="filter--fav--region--title">
+                                    <h3>[[ regions.name ]]</h3>
+                                    <div class="filter--checked--all" v-if="regions.stadium_list.length > 1">
+                                        <p @click="allCheckStad(index, 'allUncheck'), regions.isAll = !regions.isAll"
+                                            v-if="regions.isAll">전체 해제</p>
+                                        <p @click="allCheckStad(index, 'allCheck'), regions.isAll = !regions.isAll"
+                                            v-else>
+                                            전체 선택</p>
+                                    </div>
+                                </div>
+                                <li v-for="regionStad in regions.stadium_list" class="filter--fav--item">
+                                    <input type="checkbox" v-model="myStadiums" :id="'stad_'+regionStad.id"
+                                        class="check-box" :value="regionStad.id">
+                                    <label :for="'stad_'+regionStad.id" class="checkLabel stad--check"
+                                        @click="pushHiddenStadium(regionStad.id)">
+                                        <p>[[ regionStad.name ]]</p>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal--bottom">
+                        <div class="modal--button">
+                            <span class="btn full yellow lg" @click="saveFavorite()">저장</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list--bottom--banner--container">
+                <a href="http://bit.ly/2TW8ICE" class="list--bottom--banner">
+                    <div class="list--bottom--banner--script">
+                        <h4>나에게 딱 맞는 매치가 없으신가요?</h4>
+                        <p>플래버가 원하는 매치를 플랩풋볼에게 알려주세요!</p>
+                        <span>자세히 보기</span>
+                    </div>
+                    <div class="list--bottom--banner--img">
+                        <img src="https://plab-football.s3.amazonaws.com/static/img/img_thunder.png"
+                            alt="나에게 딱 맞는 매치가 없으신가요?">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="tprApp" class="modal--container isFull" v-if="showFavoriteModal" v-cloak>
+            <div class="modal--wrapper isFull">
+                <div class="user-favorite__hero">
+                    <div class="user-favorite__hero-cover">
+                        <img src="https://plab-football.s3.amazonaws.com/static/img/img_cover_favorite.jpg">
+
+                    </div>
+                    <div class="user-favorite__hero-title">
+                        <h1>선호하는 지역과 시간을<br>알려주세요</h1>
+                        <p>주변에 더 많은 매치를 열고 찾기 쉽게 도와드릴게요!</p>
+                    </div>
+                </div>
+                <div class="modal--body" v-cloak>
+                    <div class="user-favorite__select">
+                        <div class="user-favorite__header">
+                            <h4>선호 지역</h4>
+                            <p>주로 활동하는 지역을 선택해주세요</p>
+                        </div>
+                        <div class="user-favorite__select-wrapper">
+                            <select @change="fetchDistricts($event)" v-model="selectRegion">
+                                <option value="0" disabled selected>지역 선택</option>
+                                <option v-for="region in regions" :value="region.id">[[ region.name ]]</option>
+                            </select>
+                            <select v-model="selectDistrict">
+                                <option value="0" disabled selected>상세 지역</option>
+                                <option v-for="district in districts" :value="district.id">[[ district.name ]]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="user-favorite__range">
+                        <div class="user-favorite__header">
+                            <h4>활동 반경</h4>
+                            <p>플랩하러 어디까지 갈 수 있나요?</p>
+                        </div>
+
+                        <ul class="radio--wrapper" style="justify-content: space-between;">
+                            <li class="radio--item" v-for="(km, index) in distance">
+                                <input type="radio" class="radio-gnb" :id="km.value+'km'" :value="km.value"
+                                    v-model="selectDistance">
+                                <label :for="km.value+'km'" class="checkLabel" @click="footNote(index)">[[ km.value
+                                    ]]km</label>
+                            </li>
+                        </ul>
+                        <div class="user-favorite_subtitle">
+                            <p>[[ currentDesc ]]</p>
+                        </div>
+                    </div>
+                    <div class="user-favorite__check">
+                        <div class="user-favorite__header">
+                            <h4>평일 선호 시간</h4>
+                            <p>중복으로 선택할 수 있습니다</p>
+                        </div>
+                        <ul class="checkbox--wrapper" style="justify-content: space-between;">
+                            <li class="checkbox--item__4rows-wrap" v-for="(time, index) in times">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_sunrise.svg"
+                                    v-if="time.type == 'mor'"></img>
+                                <input type="checkbox" class="checkbox--item__4rows" :id="time.value"
+                                    :value="time.value" v-model="selectTimes">
+                                <label :for="time.value">
+                                    <div style="margin-bottom: 5px;">
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_sunrise.svg"
+                                            v-if="time.type == 0"></img>
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_sunny.svg"
+                                            v-else-if="time.type == 1"></img>
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_night.svg"
+                                            v-else-if="time.type == 2"></img>
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_midnight.svg"
+                                            v-else-if="time.type == 3"></img>
+                                    </div>
+                                    <div>
+                                        [[ time.label ]]
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-favorite__check" style="border-bottom: 0;">
+                        <div class="user-favorite__header">
+                            <h4>주말/휴일 선호 시간</h4>
+                            <p>중복으로 선택할 수 있습니다</p>
+                        </div>
+                        <ul class="checkbox--wrapper" style="justify-content: space-between;">
+                            <li class="checkbox--item__4rows-wrap" v-for="(time, index) in times">
+                                <input type="checkbox" class="checkbox--item__4rows" :id="time.value+'h'"
+                                    :value="time.value" v-model="selectHoliTimes">
+                                <label :for="time.value+'h'">
+                                    <div style="margin-bottom: 5px;">
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_sunrise.svg"
+                                            v-if="time.type == 0"></img>
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_sunny.svg"
+                                            v-else-if="time.type == 1"></img>
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_night.svg"
+                                            v-else-if="time.type == 2"></img>
+                                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_midnight.svg"
+                                            v-else-if="time.type == 3"></img>
+                                    </div>
+                                    <div>
+                                        [[ time.label ]]
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-wrapper">
+                        <span class="btn" @click="postFavorite()">저장</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  -->
+
+        <div id="footer">
+            <div class="footerWrap">
+
+                <div class="footerNav">
+                    <ul>
+                        <h3>매치</h3>
+                        <li>
+                            <a href="/">모든 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/1/matches/">여성 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/2/matches/">남녀모두 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/22/matches/">초급 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/3/matches/">중급 매치</a>
+                        </li>
+                    </ul>
+                    <ul class="footerDul">
+                        <h3>서비스 지역</h3>
+                        <li>
+                            <a href="/region/1/matches/">서울</a>
+                        </li>
+                        <li>
+                            <a href="/region/3/matches/">경기</a>
+                        </li>
+                        <li>
+                            <a href="/region/8/matches/">인천</a>
+                        </li>
+                        <li>
+                            <a href="/region/7/matches/">대전·충청</a>
+                        </li>
+                        <!-- <li>
+                  <a href="/region/13/matches/">충북</a>
+                </li> -->
+                        <li>
+                            <a href="/region/2/matches/">대구·경북</a>
+                        </li>
+                        <li>
+                            <a href="/region/11/matches/">울산</a>
+                        </li>
+                        <li>
+                            <a href="/region/10/matches/">부산</a>
+                        </li>
+                        <li>
+                            <a href="/region/6/matches/">광주</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h3>플랩풋볼</h3>
+                        <li>
+                            <a href="/about/">플랩풋볼 소개</a>
+                        </li>
+                        <li>
+                            <a href="/manager/apply/">매니저 지원</a>
+                        </li>
+                        <li>
+                            <a href="https://www.notion.so/LET-S-PLAB-4718d190580047e6ab6ecb34a0dac215">채용</a>
+                        </li>
+                        <li>
+                            <a href="/cs/6/topics/">공지사항</a>
+                        </li>
+                        <li>
+                            <a href="/cs/">자주 묻는 질문</a>
+                        </li>
+                        <li>
+                            <a href="http://pf.kakao.com/_xmxhlAC">1:1 문의</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h3>소셜 미디어</h3>
+                        <li>
+                            <a href="https://www.instagram.com/plabfootball/" target="_blank">인스타그램</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                                target="_blank">페이스북</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">페이스북 그룹</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="company">
+                    <h2><a href="/">plabfootball.com</a></h3>
+                        <p>풋살하고 싶을 땐, 플랩풋볼</p>
+                        <span><a href="/term/">이용 약관 | </a><a href="/privacy/">개인정보 처리방침 | </a><a
+                                href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6508100575">사업자 정보 확인</a></span><br>
+                        <span>플랩풋볼 | 서울특별시 마포구 잔다리로31 제우피스빌딩 2층 | contact@plabfootball.com</span>
+                        <span>주식회사 마이플레이컴퍼니 | 사업자번호 650-81-00575 | 대표 강동규 | 통신판매업 신고 2020-서울마포-4411</span>
+                        <span class="copyright">Copyright <b>PLAB</b> All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,1077 @@
+<html>
+
+<head>
+
+    <!-- Anti-flicker snippet (recommended)  -->
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"> </script>
+    
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <!-- 메인배너 슬라이더 -->
+    <script type="text/javascript" href="slick.min.js"></script>
+    <!-- 사이트에서 가져온 CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="styles6.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles1623313680.css">
+    <link rel="stylesheet" type="text/css" href="slick.css">
+    <link rel="stylesheet" type="text/css" href="slick-theme.css">
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', 'dotum', 'gulim', sans-serif;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            transition: 0.25s;
+            -webkit-transition: 0.25s;
+            -moz-transition: 0.25s;
+            -o-transition: 0.25s;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        img {
+            border: 0 none;
+        }
+
+        a {
+            outline: none;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+
+        ol,
+        ul,
+        li {
+            list-style: none
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: keep-all;
+            overflow: auto;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', 'dotum', 'gulim', sans-serif;
+        }
+
+        pre a {
+            color: #3534A5;
+            text-decoration: underline;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* 초기화 */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        /*legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}*/
+        img {
+            vertical-align: middle;
+        }
+
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', dotum, sans-serif;
+            font-size: 1em
+        }
+
+        input[type="submit"] {
+            cursor: pointer
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+        }
+
+        select {
+            margin: 0
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            word-break: break-all
+        }
+
+        hr {
+            display: none
+        }
+
+        pre {
+            font-size: 1.1em
+        }
+
+        *,
+        :after,
+        :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        /* SET */
+        [v-cloak] {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .carousel--container {
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 50px;
+            }
+
+            .carousel--container {
+                background-color: #fafafa;
+                margin: 0 auto;
+            }
+
+            .carousel--container .slick-slider {
+                max-width: 1024px;
+                padding: 0 40px;
+                margin: 0 auto;
+            }
+
+            .carousel--hero {
+                background-color: #fafafa;
+                margin: 0 auto;
+                margin-bottom: 6px;
+                padding: 20px 0;
+            }
+
+            .carousel--ipsum {
+                height: 320px;
+                background-color: #333;
+                ;
+            }
+
+            .carousel--title {
+                padding: 40px 70px;
+            }
+
+            .carousel--title .carousel--title__starred {
+                font-size: 14px;
+            }
+
+            .carousel--title h3 {
+                font-size: 24px;
+            }
+
+            .carousel--title p {
+                font-size: 14px;
+            }
+
+            .carousel--navi ul li {
+                background-color: #ccc;
+            }
+
+            .carousel--card {
+                height: 360px;
+                padding: 50px;
+            }
+
+            .carousel--card .carousel--card--title {
+                color: white;
+                margin-top: 20px;
+            }
+
+            .carousel--card .carousel--card--title p {
+                font-size: 20px;
+            }
+
+            .carousel--card .carousel--card--title h3 {
+                font-size: 54px;
+                margin-bottom: 30px;
+            }
+
+            .carousel--card .carousel--card--title span {
+                color: #ffc645;
+                font-size: 18px;
+            }
+
+            .carousel--card .carousel--card--emoji {
+                font-size: 170px;
+                right: 7%;
+                bottom: 5%;
+            }
+
+            .carousel--img img {
+                height: 320px;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: none;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: block;
+            }
+
+            .carousel--card .carousel--card--overlay {
+                padding: 50px;
+            }
+
+            .carousel--card .carousel--card--title img {
+                height: 24px;
+            }
+
+            .carousel--card .carousel--card--overlay .carousel--card--title h3 {
+                font-size: 27px;
+            }
+
+            .carousel--container .carousel--wrapper .slick-dots {
+                right: 80px;
+                bottom: 80px;
+            }
+        }
+
+
+        /*SWIPETAB*/
+        .swipe-tab-content {
+            position: relative;
+            min-height: 365px;
+
+
+        }
+
+        @media screen and (min-width: 767px) {
+            .swipe-tab-content {
+                min-height: 500px;
+            }
+        }
+
+        .swipe-tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: 0;
+            color: $swipe-tab-color;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 2px solid rgba($swipe-active-tab-color, 0);
+            transition: all 0.5s;
+        }
+
+        .swipe-tab:hover {}
+
+        .swipe-tab.active-tab {
+            color: white;
+            font-weight: bold;
+        }
+
+        .swipe-tab .dateWrap {
+            border-radius: 40px;
+            padding: 13px 0;
+            margin: 0 3px;
+            display: none;
+        }
+
+        .swipe-tab .dateWrap:first-child {
+            display: none;
+        }
+
+        .swipe-tab.slick-initialized .dateWrap {
+            display: block;
+        }
+
+        .swipe-tab .dateWrap p {
+            font-size: 18px;
+            line-height: 14px;
+            padding-top: 8px;
+            font-weight: 400;
+        }
+
+        .swipe-tab .dateWrap span {
+            font-size: 11px;
+        }
+
+        .swipe-tab.active-tab .dateWrap {
+            background-color: #3540A5;
+        }
+
+        /* modal css */
+@media (min-width: 1024px) {
+	.modal--container.isFull .modal--wrapper {
+		position: initial;
+		height: 100%;
+		width: 100%;
+	}
+	.modal--container.isFull .modal--body {
+		overflow-y: initial;
+		width: 540px;
+		margin: 0 auto;
+	}
+	.modal--wrapper {
+		width: 540px;
+		height: 540px;
+		right: 0;
+		top: 50%;
+		bottom: 50%;
+		margin: auto;
+		border-radius: 20px;
+		transform: initial;
+	}
+	.modal--wrapper.isFull {
+		border-radius: 20px;
+		width: 540px;
+		height: 540px;
+	}
+	#manager_home .modal--wrapper.isFull .modal--body {
+		width: 540px;
+	}
+	.modal--no-data .intro-wrapper {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.modal--no-data .intro-box .intro {
+		font-size: 14px; 
+	}
+	.modal--no-data .desc li p {
+		font-size: 14px;
+	}
+	/* .modal--wrapper {
+		max-width: 540px;
+		height: fit-content;
+		padding-bottom: 100px;
+		position: fixed;
+		max-height: 540px;
+	}
+	.modal--wrapper--full {
+		max-width: 540px;
+		position: fixed;
+		max-height: 540px;
+	}
+	.modal--wrapper.isFull {
+		max-width: 540px;
+		height: fit-content;
+		padding-bottom: 100px;
+		position: fixed;
+		border-radius: 20px;
+	} */
+	.modal--wrapper.isFull .modal--bottom .modal--button .btn {
+		border-radius: 0 0 20px 20px;
+	}
+	.modal--wrapper.isFullScroll {
+		border-radius: 20px;
+		height: 100%;
+		max-width: 540px;
+		max-height: 100%;
+		margin-top: 50px;
+		top: initial;
+		bottom: initial;
+	}
+	.modal--mask.white--mask {
+		background-color: white;
+	}
+	.my--style--title {
+		font-size: 14px;
+		margin: 0;
+		background-color: white;
+		color: #333;
+		text-align: center;
+		padding: 20px;
+		margin-bottom: 30px;
+		width: 100%;
+		display: block;
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="plabContainer">
+        <div class="navbar" id="navbar-main">
+            <div class="navContainer home">
+                <div class="newLogo">
+                    <a href="/"><img src="https://plab-football.s3.amazonaws.com/static/img/logo.svg" alt="플랩풋볼"></a>
+                </div>
+                <div class="top--menu" id="userMenu">
+                    <!-- <div class="">
+                    <input id="searchId" placeholder="지역, 구장">
+                    <span id="searchBtn" onclick="getSearch()">검색</span>
+                  </div> -->
+
+                    <div class="mainTab">
+                        <!-- <a href="/mypage/myrecord/">
+                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_plabfit.svg" alt="플랩핏">
+                      </a> -->
+                        <a href="/mypage/myplab/">
+                            <img src="https://plab-football.s3.amazonaws.com/static/img/ic_mymatch.svg" alt="나의 매치">
+                            <transition name="fade" v-if="waitReviews">
+                                <div class="filter__toast">알림메시지응용</div>
+                            </transition>
+                        </a>
+                        <a href="/mypage/">
+                            <img src="https://plab-football.s3.amazonaws.com/static/img/ic_my.svg" alt="나의 플랩풋볼">
+                        </a>
+                    </div>
+
+                    <div id="sidebar-main-trigger" class="icon">
+                        <div class="moreIconWrap">
+                            <div class="moreIcon"></div>
+                            <div class="moreIcon"></div>
+                            <div class="moreIcon"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar main" id="sidebar-main">
+            <div class="wrapper">
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="/about/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about.svg" alt="플랩풋볼 소개">
+                                <span>플랩풋볼 소개</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/manager/apply/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about_manager.svg"
+                                    alt="플랩풋볼 매니저 지원">
+                                <span>매니저 지원</span>
+                            </a>
+                        </li>
+                        <!--
+                    <li>
+                      <a href="/partnership/">
+                        <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about.svg">
+                        <span>구장 제휴 안내</span>
+                      </a>
+                    </li>-->
+                        <li class="separateLine"></li>
+                        <li>
+                            <a href="/cs/6/topics/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_notice.svg" alt="공지사항">
+                                <span>공지사항</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/cs/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_help.svg" alt="자주 묻는 질문">
+                                <span>자주 묻는 질문</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://pf.kakao.com/_xmxhlAC">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_1on1.svg" alt="1:1 문의">
+                                <span>1:1 문의</span>
+                            </a>
+                        </li>
+                        <li class="separateLine"></li>
+                        <p class="sideSub">SNS에서 플랩풋볼의 스토리를 들어보세요</p>
+                        <li class="submenu">
+                            <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                                target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_fb.svg" alt="플랩풋볼 페이스북">
+                                <span>페이스북</span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_fbgroup.svg"
+                                    alt="플랩풋볼 페이스북 그룹">
+                                <span>페이스북 그룹</span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="https://www.instagram.com/plabfootball/" target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_ig.svg" alt="플랩풋볼 인스타그램">
+                                <span>인스타그램</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="app">
+            <div class="navigation--container">
+                <div class="navigation--wrapper">
+                    <div class="navigation--item">
+                        <a class="selected" href="/">소셜 매치</a>
+                        <a href="/rental/">
+                            구장 예약
+                            <span class="is_new">N</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel--container">
+                <ul class="carousel--wrapper slick-initialized slick-slider slick-dotted">
+                    <!-- 슬라이드 main -->
+                    <div class="slick-list draggable">
+                        <div class="slick-track"
+                            style="opacity: 1; width: 10384px; transform: translate3d(-1888px, 0px, 0px);">
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img">
+                                        <img src="images/img1.gif" class="carousel--img_m">
+                                        <img src="images/img1.gif" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+                            <li class="carousel--hero slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1"
+                                role="tabpanel" id="slick-slide10" aria-describedby="slick-slide-control10"
+                                style="width: 944px;">
+                                <a href="#" tabindex="-1">
+                                    <div class="carousel--img">
+                                        <img src="images/img2.gif" class="carousel--img_m">
+                                        <img src="images/img2.gif" class="carousel--img_pc">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--hero slick-slide slick-current slick-active" data-slick-index="1"
+                                aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide11"
+                                aria-describedby="slick-slide-control11" style="width: 944px;"><a href="#" tabindex="0">
+                                    <div class="carousel--img">
+                                        <img src="images/img3.gif" class="carousel--img_m">
+                                        <img src="images/img3.gif" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+
+                            <!-- main 사진을 중앙에 보여주고 그 외 사진은 숨겨놓음 -->
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="5" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img"><img src="images/img1.gif" class="carousel--img_m"> <img
+                                            src="images/img1.gif" class="carousel--img_pc"></div>
+                                </a></li>
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="6" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img"><img src="images/img2.gif" class="carousel--img_m"> <img
+                                            src="images/img2.gif" class="carousel--img_pc"></div>
+                                </a></li>
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="7" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img"><img src="images/img3.gif" class="carousel--img_m"> <img
+                                            src="#" class="carousel--img_pc"></div>
+                                </a></li>
+
+                        </div>
+                    </div>
+                    <ul class="slick-dots" style="" role="tablist">
+                        <li class="" role="presentation">
+                            <button type="button" role="tab" id="slick-slide-control10" aria-controls="slick-slide10"
+                                aria-label="1 of 3" tabindex="-1">1</button>
+                        </li>
+                        <li role="presentation" class="slick-active"><button type="button" role="tab"
+                                id="slick-slide-control11" aria-controls="slick-slide11" aria-label="2 of 3"
+                                tabindex="0" aria-selected="true">2</button>
+                        </li>
+                        <li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control12"
+                                aria-controls="slick-slide12" aria-label="3 of 3" tabindex="-1">3</button>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="main--match--container">
+                <div id="dateNav" class="sub-header">
+                    <div class="tabWrap">
+                        <div class="swipe-tabs">
+                            <ul class="swipe-tab slick-initialized slick-slider"><button
+                                    class="slick-prev slick-arrow slick-disabled" aria-label="Previous" type="button"
+                                    aria-disabled="true" style="">Previous</button>
+                                <div class="slick-list draggable">
+                                    <div class="slick-track"
+                                        style="opacity: 1; width: 1932px; transform: translate3d(0px, 0px, 0px);">
+                                        <li class="dateWrap slick-slide isActive slick-slide slick-current slick-active"
+                                            data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>10</p> <span>목</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide slick-active" data-slick-index="1"
+                                            aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>11</p> <span>금</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide isSat slick-active" data-slick-index="2"
+                                            aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>12</p> <span>토</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide isSun slick-active" data-slick-index="3"
+                                            aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>13</p> <span>일</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide slick-active" data-slick-index="4"
+                                            aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>14</p> <span>월</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide slick-active" data-slick-index="5"
+                                            aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>15</p> <span>화</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide slick-active" data-slick-index="6"
+                                            aria-hidden="false" tabindex="0" style="width: 132px;">
+                                            <p>16</p> <span>수</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide" data-slick-index="7" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>17</p> <span>목</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide" data-slick-index="8" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>18</p> <span>금</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide isSat" data-slick-index="9" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>19</p> <span>토</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide isSun" data-slick-index="10" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>20</p> <span>일</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide" data-slick-index="11" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>21</p> <span>월</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide" data-slick-index="12" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>22</p> <span>화</span>
+                                        </li>
+                                        <li class="dateWrap slick-slide" data-slick-index="13" aria-hidden="true"
+                                            tabindex="-1" style="width: 132px;">
+                                            <p>23</p> <span>수</span>
+                                        </li>
+                                    </div>
+                                </div><button class="slick-next slick-arrow" aria-label="Next" type="button" style=""
+                                    aria-disabled="false">Next</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__filter">
+                    <div class="main__match-filter">
+                        <ul>
+                            <li><a class="match-filter-item--active">내 경기장</a></li>
+                            <li><a class="">서울</a></li>
+                            <li><a class="">경기</a></li>
+                            <li><a class="">인천</a></li>
+                            <li><a class="">대전</a></li>
+                            <li><a class="">대구</a></li>
+                            <li><a class="">부산</a></li>
+                            <li><a class="">울산</a></li>
+                            <li><a class="">광주</a></li>
+                            <li><a class="">충북</a></li>
+                            <li><a class="">경북</a></li>
+                            <li><a class="">전북</a></li>
+                            <li><a class="">충남</a></li>
+                            <li><a class="">경남</a></li>
+                        </ul>
+                    </div>
+                    <div class="main--match--filter">
+                        <div class="filter--results">
+                            <p style=""><strong>111</strong>개의 매치</p>
+                        </div>
+                        <div class="filter--wrapper" id="filter--wrapper" data-toggle="modal"
+                            data-target="#modalContainer">
+                            <span>모든 매치</span>
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="list--match-schedule--container">
+                <ul>
+                    <!---->
+                    <li class="list--match-schedule--item"><a>
+                            <div class="list--match-schedule__time">
+                                <p>10:00</p>
+                            </div>
+                            <div class="list--match-schedule__info">
+                                <!---->
+                                <!---->
+                                <div class="match-list__title">
+                                    <h3>서초 스타 풋살장 A면</h3>
+                                    <!---->
+                                </div>
+                                <div class="label--match-option"><span class="match--option isMix">남녀모두</span>
+                                    <span>6vs6</span>
+                                    <span>3파전</span> <span>일반 (Lv 1~5)</span>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="list--match-schedule__status">
+                                <div class="match-status isFull">
+                                    <p>마감</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </li>
+                    <li class="list--match-schedule--item"><a>
+                            <div class="list--match-schedule__time">
+                                <p>10:00</p>
+                            </div>
+                            <div class="list--match-schedule__info">
+                                <!---->
+                                <!---->
+                                <div class="match-list__title">
+                                    <h3>용산 아이파크몰 (6구장) *주차1자리*</h3>
+                                    <!---->
+                                </div>
+                                <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                    <span>6vs6</span>
+                                    <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="list--match-schedule__status">
+                                <div class="match-status isFull">
+                                    <p>마감</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </li>
+                    <li class="list--match-schedule--item"><a>
+                            <div class="list--match-schedule__time">
+                                <p>10:00</p>
+                            </div>
+                            <div class="list--match-schedule__info">
+                                <!---->
+                                <!---->
+                                <div class="match-list__title">
+                                    <h3>시흥 루프탑필드 (시흥 프리미엄 아울렛) </h3>
+                                    <!---->
+                                </div>
+                                <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                    <span>6vs6</span>
+                                    <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="list--match-schedule__status">
+                                <div class="match-status isHurry">
+                                    <p>마감임박!</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </li>
+                    <li class="list--match-schedule--item"><a>
+                            <div class="list--match-schedule__time">
+                                <p>22:00</p>
+                            </div>
+                            <div class="list--match-schedule__info">
+                                <!---->
+                                <!---->
+                                <div class="match-list__title">
+                                    <h3>고양 화전 드림 풋살장 B면</h3>
+                                    <!---->
+                                </div>
+                                <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                    <span>6vs6</span>
+                                    <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="list--match-schedule__status">
+                                <div class="match-status isHurry">
+                                    <p>마감임박!</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+    <!--  -->
+
+    <div id="footer">
+        <div class="footerWrap">
+
+            <div class="footerNav">
+                <ul>
+                    <h3>매치</h3>
+                    <li>
+                        <a href="/">모든 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/1/matches/">여성 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/2/matches/">남녀모두 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/22/matches/">초급 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/3/matches/">중급 매치</a>
+                    </li>
+                </ul>
+                <ul class="footerDul">
+                    <h3>서비스 지역</h3>
+                    <li>
+                        <a href="/region/1/matches/">서울</a>
+                    </li>
+                    <li>
+                        <a href="/region/3/matches/">경기</a>
+                    </li>
+                    <li>
+                        <a href="/region/8/matches/">인천</a>
+                    </li>
+                    <li>
+                        <a href="/region/7/matches/">대전·충청</a>
+                    </li>
+                    <!-- <li>
+                  <a href="/region/13/matches/">충북</a>
+                </li> -->
+                    <li>
+                        <a href="/region/2/matches/">대구·경북</a>
+                    </li>
+                    <li>
+                        <a href="/region/11/matches/">울산</a>
+                    </li>
+                    <li>
+                        <a href="/region/10/matches/">부산</a>
+                    </li>
+                    <li>
+                        <a href="/region/6/matches/">광주</a>
+                    </li>
+                </ul>
+                <ul>
+                    <h3>플랩풋볼</h3>
+                    <li>
+                        <a href="/about/">플랩풋볼 소개</a>
+                    </li>
+                    <li>
+                        <a href="/manager/apply/">매니저 지원</a>
+                    </li>
+                    <li>
+                        <a href="https://www.notion.so/LET-S-PLAB-4718d190580047e6ab6ecb34a0dac215">채용</a>
+                    </li>
+                    <li>
+                        <a href="/cs/6/topics/">공지사항</a>
+                    </li>
+                    <li>
+                        <a href="/cs/">자주 묻는 질문</a>
+                    </li>
+                    <li>
+                        <a href="http://pf.kakao.com/_xmxhlAC">1:1 문의</a>
+                    </li>
+                </ul>
+                <ul>
+                    <h3>소셜 미디어</h3>
+                    <li>
+                        <a href="https://www.instagram.com/plabfootball/" target="_blank">인스타그램</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                            target="_blank">페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">페이스북 그룹</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="company">
+                <h2><a href="/">plabfootball.com</a></h3>
+                    <p>풋살하고 싶을 땐, 플랩풋볼</p>
+                    <span><a href="/term/">이용 약관 | </a><a href="/privacy/">개인정보 처리방침 | </a><a
+                            href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6508100575">사업자 정보 확인</a></span><br>
+                    <span>플랩풋볼 | 서울특별시 마포구 잔다리로31 제우피스빌딩 2층 | contact@plabfootball.com</span>
+                    <span>주식회사 마이플레이컴퍼니 | 사업자번호 650-81-00575 | 대표 강동규 | 통신판매업 신고 2020-서울마포-4411</span>
+                    <span class="copyright">Copyright <b>PLAB</b> All rights reserved.</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div data-sidebar-main="mask"
+        style="position: fixed; inset: 0px; z-index: 2999; display: none; background-color: rgb(0, 0, 0); opacity: 0.5;">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // 모든 매치 모달팝업 클릭이벤트
+            // filter--wrapper
+            $('#filter--wrapper').on("click", function () {
+                console.log("clicked");
+                $("#modalContainer").modal("show");
+            });
+
+        });
+
+
+        /* 
+                $(document).ready(function () {
+
+            // 모든 매치 모달팝업 클릭이벤트
+            // filter--wrapper
+            $('#filter--wrapper').on("click", function () {
+                console.log("clicked");
+                $("#modal--container").modal("show");
+            });
+
+        });
+        
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-146052-10', 'getbootstrap.com');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+    </script>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', 'dotum', 'gulim', sans-serif;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            transition: 0.25s;
+            -webkit-transition: 0.25s;
+            -moz-transition: 0.25s;
+            -o-transition: 0.25s;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        img {
+            border: 0 none;
+        }
+
+        a {
+            outline: none;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+
+        ol,
+        ul,
+        li {
+            list-style: none
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: keep-all;
+            overflow: auto;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', 'dotum', 'gulim', sans-serif;
+        }
+
+        pre a {
+            color: #3534A5;
+            text-decoration: underline;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* 초기화 */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        /*legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}*/
+        img {
+            vertical-align: middle;
+        }
+
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', dotum, sans-serif;
+            font-size: 1em
+        }
+
+        input[type="submit"] {
+            cursor: pointer
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+        }
+
+        select {
+            margin: 0
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            word-break: break-all
+        }
+
+        hr {
+            display: none
+        }
+
+        pre {
+            font-size: 1.1em
+        }
+
+        *,
+        :after,
+        :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        /* SET */
+        [v-cloak] {
+            display: none;
+        }
+
+        /* 슬라이드바 */
+        /* NEW-CAROUSEL */
+        .carousel--container {
+            border-bottom: 10px solid #eee;
+        }
+
+        .carousel--loading {
+            padding: 20px 15px;
+        }
+
+        .carousel--loading .loading {
+            width: 100%;
+            border-radius: 20px;
+            height: 180px;
+            background-color: #eeeeee;
+            display: block;
+            text-align: center;
+        }
+
+        .carousel--wrapper {
+            display: none;
+        }
+
+        .carousel--wrapper .carousel--hero:first-child {
+            display: block;
+        }
+
+        .carousel--wrapper.slick-initialized .carousel--hero {
+            display: block;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots {
+            display: flex;
+            bottom: 50px;
+            padding: 0 15px;
+            width: initial;
+            right: 20px;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots li {
+            width: 16px;
+            height: 3px;
+            margin: 0;
+            margin-right: 2px;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots li button {
+            width: 16px;
+            height: 3px;
+            background-color: #eee;
+            display: block;
+            margin-right: 2px;
+            padding: 0;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots li button:before {
+            all: unset;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots .slick-active button {
+            background-color: #FFC645;
+        }
+
+        .carousel--hero {
+            padding: 20px 5px;
+            background-color: white;
+            margin-bottom: 6px;
+        }
+
+        .carousel--hero.slick-center {}
+
+        .carousel--ipsum {
+            background-color: #eeeeee;
+            display: block;
+            width: 90%;
+            height: 152px;
+            border-radius: 20px;
+            margin: 0 auto;
+            background-size: cover;
+        }
+
+        .carousel--img img {
+            width: 100%;
+            border-radius: 20px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .carousel--title {
+            padding: 20px 20px;
+        }
+
+        .carousel--title p {
+            font-size: 12px;
+        }
+
+        .carousel--title .carousel--title__starred {
+            color: #FF5D5D;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .carousel--title h3 {
+            font-size: 18px;
+            margin: 2px 0;
+        }
+
+        .carousel--navi {
+            margin-top: 10px;
+        }
+
+        .carousel--navi ul {
+            display: flex;
+        }
+
+        .carousel--navi ul li {
+            width: 24px;
+            height: 3px;
+            background-color: #eee;
+            display: block;
+            margin-right: 2px;
+        }
+
+        .carousel--navi ul li.is--selected {
+            background-color: #FF5D5D;
+        }
+
+        .carousel--card {
+            width: 100%;
+            border-radius: 20px;
+            height: 180px;
+            display: flex;
+            position: relative;
+            padding: 20px;
+        }
+
+        .carousel--card.pttrn {
+            background-size: 64px;
+            background-position: center;
+        }
+
+        .carousel--card.odl--mens {
+            background-image: url('./../img/img_odl_slidecover1.jpg');
+            background-size: cover;
+            background-position: right bottom;
+        }
+
+        .carousel--card.odl--womens {
+            background-image: url('./../img/img_odl_slidecover2.jpg');
+            background-size: cover;
+            background-position: left bottom;
+        }
+
+        .carousel--card .carousel--card--overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            border-radius: 20px 0 0 20px;
+            padding: 20px;
+        }
+
+        .carousel--card .carousel--card--overlay.odl--mens {
+            background-image: url('./../img/img_odl_overlay.png');
+        }
+
+        .carousel--card .carousel--card--overlay.odl--womens {
+            background-image: url('./../img/img_odl_overlay_w.png');
+        }
+
+        .carousel--card .carousel--card--overlay .carousel--card--title {
+            width: 60%;
+        }
+
+        .carousel--card .carousel--card--overlay .carousel--card--title h3 {
+            font-size: 18px;
+            word-break: keep-all;
+        }
+
+        .carousel--card .carousel--card--overlay .carousel--card--title span {
+            color: #333;
+            border-radius: 20px;
+            padding: 4px 8px;
+            font-size: 11px;
+            background-color: #ffc645;
+        }
+
+        .carousel--card .carousel--card--title {
+            color: white;
+            margin-top: 20px;
+        }
+
+        .carousel--card .carousel--card--title img {
+            height: 14px;
+        }
+
+        .carousel--card .carousel--card--title p {
+            font-size: 12px;
+        }
+
+        .carousel--card .carousel--card--title h3 {
+            font-size: 24px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .carousel--card .carousel--card--title span {
+            color: #ffc645;
+            font-size: 12px;
+        }
+
+        .carousel--card .carousel--card--emoji {
+            position: absolute;
+            font-size: 90px;
+            right: 7%;
+            bottom: 1%;
+        }
+
+        @media (max-width: 480px) {
+            .carousel--img img {
+                height: 50%;
+            }
+
+            .carousel--card {
+                height: 180px;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: block;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: none;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 1023px) {
+            .carousel--card {
+                height: 260px;
+                padding: 30px;
+            }
+
+            .carousel--card .carousel--card--title {
+                color: white;
+                margin-top: 20px;
+            }
+
+            .carousel--card .carousel--card--title p {
+                font-size: 20px;
+            }
+
+            .carousel--card .carousel--card--title h3 {
+                font-size: 48px;
+                margin-bottom: 30px;
+            }
+
+            .carousel--card .carousel--card--title span {
+                color: #ffc645;
+                font-size: 18px;
+            }
+
+            .carousel--card .carousel--card--emoji {
+                font-size: 130px;
+                right: 7%;
+                bottom: 5%;
+            }
+
+            .carousel--img img {
+                height: 50%;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: block;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .carousel--container {
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 50px;
+            }
+
+            .carousel--container {
+                background-color: #fafafa;
+                margin: 0 auto;
+            }
+
+            .carousel--container .slick-slider {
+                max-width: 1024px;
+                padding: 0 40px;
+                margin: 0 auto;
+            }
+
+            .carousel--hero {
+                background-color: #fafafa;
+                margin: 0 auto;
+                margin-bottom: 6px;
+                padding: 20px 0;
+            }
+
+            .carousel--ipsum {
+                height: 320px;
+                background-color: #333;
+                ;
+            }
+
+            .carousel--title {
+                padding: 40px 70px;
+            }
+
+            .carousel--title .carousel--title__starred {
+                font-size: 14px;
+            }
+
+            .carousel--title h3 {
+                font-size: 24px;
+            }
+
+            .carousel--title p {
+                font-size: 14px;
+            }
+
+            .carousel--navi ul li {
+                background-color: #ccc;
+            }
+
+            .carousel--card {
+                height: 360px;
+                padding: 50px;
+            }
+
+            .carousel--card .carousel--card--title {
+                color: white;
+                margin-top: 20px;
+            }
+
+            .carousel--card .carousel--card--title p {
+                font-size: 20px;
+            }
+
+            .carousel--card .carousel--card--title h3 {
+                font-size: 54px;
+                margin-bottom: 30px;
+            }
+
+            .carousel--card .carousel--card--title span {
+                color: #ffc645;
+                font-size: 18px;
+            }
+
+            .carousel--card .carousel--card--emoji {
+                font-size: 170px;
+                right: 7%;
+                bottom: 5%;
+            }
+
+            .carousel--img img {
+                height: 320px;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: none;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: block;
+            }
+
+            .carousel--card .carousel--card--overlay {
+                padding: 50px;
+            }
+
+            .carousel--card .carousel--card--title img {
+                height: 24px;
+            }
+
+            .carousel--card .carousel--card--overlay .carousel--card--title h3 {
+                font-size: 27px;
+            }
+
+            .carousel--container .carousel--wrapper .slick-dots {
+                right: 80px;
+                bottom: 80px;
+            }
+        }
+
+        /* end 슬라이드바 */
+
+        /* 날짜슬라이드바 */
+        /*NEW-DATE-NAV*/
+        #app #dateNav {
+            display: inherit;
+            background-color: white;
+            z-index: 2;
+            left: 0;
+            position: sticky;
+            top: 0;
+        }
+
+        #app #dateNav .tabWrap {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 9px;
+        }
+
+        #app #dateNav .tabWrap .slick-prev:before,
+        #app #dateNav .tabWrap .slick-next:before {
+            color: #3540A5;
+        }
+
+        #app .dateWrap.isActive {
+            background-color: #3534A5;
+            color: white;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            #app #dateNav {
+                padding: 20px 0;
+            }
+
+            div#dateNav {}
+
+            #app #dateNav .tabWrap {
+                padding: 10px 30px;
+            }
+
+            #app #dateNav .tabWrap .slick-slider {
+                padding: 0;
+            }
+
+            #app #dateNav .tabWrap .slick-slider .swipe-tab {
+                margin: 0 5px;
+            }
+        }
+
+        .main--match--container {}
+
+        /* 매치필터 */
+        .main__match-filter {
+            background-color: #fafafa;
+        }
+
+        .main__match-filter ul {
+            width: 100%;
+            box-sizing: content-box;
+            overflow-x: scroll;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+            padding: 10px 0;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .main__match-filter ul li:first-child {
+            margin-left: 10px;
+        }
+
+        .main__match-filter ul li {
+            display: inline-grid;
+        }
+
+        .main__match-filter ul li a {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .main__match-filter ul li .match-filter-item--active {
+            background-color: #FFC645;
+        }
+
+        @media(min-width: 1024px) {
+            .main__match-filter {
+                background-color: white;
+            }
+
+            .main__match-filter ul {
+                padding: 10px 10px 20px 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main__match-filter ul li a {
+                font-size: 14px;
+            }
+
+            .main__match-filter ul li:first-child {
+                margin-left: 30px;
+            }
+
+            .main--match--filter .filter--results {
+                margin-left: 20px;
+            }
+        }
+
+        @media(max-width: 720px) {
+            .main__match-filter ul {
+                animation: bounce-in 1s ease;
+            }
+        }
+
+        /* 리스트매치스케쥴 */
+        .list--match-schedule--container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .main--match--filter {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .filter--results p {
+            font-size: 14px;
+        }
+
+        .filter--edit-my-stad {
+            width: 100%;
+            margin-top: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            text-align: right;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .filter--wrapper {
+            position: relative;
+        }
+
+        .filter--wrapper span {
+            font-size: 12px;
+            margin-left: 10px;
+            padding: 2px 15px 2px 3px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .filter--wrapper span.isFilter {
+            border-bottom: 2px solid #FFC645;
+        }
+
+        .filter--wrapper .filter__toast {
+            position: absolute;
+            background-color: #FFC645;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 6px;
+            z-index: 1;
+            bottom: -30px;
+            right: 50%;
+            left: 55%;
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+            font-size: 11px;
+            width: fit-content;
+            text-align: center;
+            margin: 0 -70px;
+        }
+
+        .filter--wrapper .filter__toast:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid #ffc645;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            top: -5px;
+        }
+
+        .filter--wrapper span:after {
+            content: '';
+            /* width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 7px solid #333;
+	position: absolute;
+	right: 0;
+	bottom: 7px; */
+            border: solid #333;
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 3px;
+            position: absolute;
+            right: 2px;
+            bottom: 10px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .list--match-schedule--item a {
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__time {
+            width: 15%;
+            font-weight: 700;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__time span {
+            font-size: 10px;
+            color: #3534A5;
+            font-weight: 400;
+            ;
+        }
+
+        .list--match-schedule--item .list--match-schedule__info {
+            width: 62%;
+            padding-right: 10px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__info .match-date {
+            margin-bottom: 5px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__info h3 {
+            font-size: 14px;
+            font-weight: 400;
+            word-break: keep-all;
+        }
+
+        .list--match-schedule--item .list--match--banner {
+            margin: 20px 10px;
+            padding: 30px;
+            border-radius: 30px;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 푸터
+        .footer {
+            text-align: center;
+            padding: 30px 50px;
+        }
+
+        .footer li {
+            position: relative;
+            display: inline;
+            padding: 0 7px 0 10px;
+            white-space: nowrap;
+        }
+
+        .footer li:before {
+            content: '';
+            width: 1px;
+            height: 12px;
+            background-color: #dbdbdb;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .footer li:first-child:before {
+            width: 0;
+        }
+
+        .footer address {
+            padding-top: 15px;
+        } */
+
+        /*FOOTER*/
+
+
+        #footer {
+            background-color: #2a2a2a;
+        }
+
+        .footerWrap {
+            overflow: auto;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 50px 20px 100px 20px;
+        }
+
+        .footerNav {
+            color: white;
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+
+        .footerNav ul {
+            margin-bottom: 30px;
+            width: 50%;
+            float: left;
+        }
+
+        .footerNav h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .footerNav ul li {
+            padding: 2px 0;
+        }
+
+        .footerNav a {
+            color: white;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .footerWrap .newLogo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footerWrap .newLogo img {
+            height: 46px;
+        }
+
+        .footerWrap .company {
+            text-align: left;
+        }
+
+        .footerWrap .company p {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .footerWrap .company a {
+            color: #999;
+        }
+
+        .footerWrap .company h2 {
+            margin-bottom: 10px;
+        }
+
+        .footerWrap .company h2 a {
+            font-size: 16px;
+            color: white;
+            font-style: italic;
+            border-bottom: 2px solid #FFC645;
+        }
+
+        .footerWrap .company span {
+            padding: 2px 0;
+            display: block;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .footerWrap .company .copyright {
+            font-size: 12px;
+        }
+
+        @media (max-width: 1024px) {
+            .footerNav .footerDul {
+                overflow: auto;
+            }
+
+            .footerNav .footerDul li {
+                width: 45%;
+                float: left;
+            }
+
+            .footerNav {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footerNav {
+                float: initial;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .footerWrap {
+                padding: 50px 30px 100px 30px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .footerWrap .newLogo {
+                float: left;
+                margin-bottom: inherit;
+            }
+
+            .footerWrap .footerNav {
+                width: 50%;
+            }
+
+            .footerNav ul {
+                width: 25%;
+            }
+
+            .footerWrap .company {
+                margin-left: 50px;
+                text-align: left;
+                width: 40%;
+            }
+
+            .footerWrap .company h2 a {
+                font-size: 20px;
+            }
+        }
+
+        /**/
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="carousel--container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/img1.gif" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>설명문구</h5>
+                        <p>설명문구</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/img2.gif" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>설명문구</h5>
+                        <p>설명문구</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/img3.gif" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>설명문구</h5>
+                        <p>설명문구</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main--match--container">
+        <div id="dateNav" class="sub-header">
+            <div class="tabWrap">
+                <div class="swipe-tabs">
+                    <ul class="swipe-tab slick-initialized slick-slider">
+                        <div class="slick-list draggable">
+                            <div class="slick-track"
+                                style="opacity: 1; width: 1974px; transform: translate3d(0px, 0px, 0px);">
+                                <h3>-날짜슬라이드-</h3>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="main__filter">
+            <div class="main__match-filter">
+                <ul>
+                    <li><a class="match-filter-item--active">내 경기장</a></li>
+                    <li><a class="">서울</a></li>
+                    <li><a class="">경기</a></li>
+                    <li><a class="">인천</a></li>
+                    <li><a class="">대전</a></li>
+                    <li><a class="">대구</a></li>
+                    <li><a class="">부산</a></li>
+                    <li><a class="">울산</a></li>
+                    <li><a class="">광주</a></li>
+                    <li><a class="">충북</a></li>
+                    <li><a class="">경북</a></li>
+                    <li><a class="">전북</a></li>
+                    <li><a class="">충남</a></li>
+                    <li><a class="">경남</a></li>
+                </ul>
+            </div>
+            <div class="main--match--filter">
+                <div class="filter--results">
+                    <p style=""><strong>111</strong>개의 매치</p>
+                </div>
+                <div class="filter--wrapper"><span>내 경기장 편집
+                        <!---->
+                    </span> <span>모든 매치</span>
+                    <!---->
+                </div>
+            </div>
+        </div>
+        <div class="list--match-schedule--container">
+            <ul>
+                <!---->
+                <li class="list--match-schedule--item"><a>
+                        <div class="list--match-schedule__time">
+                            <p>10:00</p>
+                        </div>
+                        <div class="list--match-schedule__info">
+                            <!---->
+                            <!---->
+                            <div class="match-list__title">
+                                <h3>서초 스타 풋살장 A면</h3>
+                                <!---->
+                            </div>
+                            <div class="label--match-option"><span class="match--option isMix">남녀모두</span>
+                                <span>6vs6</span>
+                                <span>3파전</span> <span>일반 (Lv 1~5)</span>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="list--match-schedule__status">
+                            <div class="match-status isFull">
+                                <p>마감</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                </li>
+                <li class="list--match-schedule--item"><a>
+                        <div class="list--match-schedule__time">
+                            <p>10:00</p>
+                        </div>
+                        <div class="list--match-schedule__info">
+                            <!---->
+                            <!---->
+                            <div class="match-list__title">
+                                <h3>용산 아이파크몰 (6구장) *주차1자리*</h3>
+                                <!---->
+                            </div>
+                            <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                <span>6vs6</span>
+                                <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="list--match-schedule__status">
+                            <div class="match-status isFull">
+                                <p>마감</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                </li>
+                <li class="list--match-schedule--item"><a>
+                        <div class="list--match-schedule__time">
+                            <p>10:00</p>
+                        </div>
+                        <div class="list--match-schedule__info">
+                            <!---->
+                            <!---->
+                            <div class="match-list__title">
+                                <h3>시흥 루프탑필드 (시흥 프리미엄 아울렛) </h3>
+                                <!---->
+                            </div>
+                            <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                <span>6vs6</span>
+                                <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="list--match-schedule__status">
+                            <div class="match-status isHurry">
+                                <p>마감임박!</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                </li>
+                <li class="list--match-schedule--item"><a>
+                        <div class="list--match-schedule__time">
+                            <p>22:00</p>
+                        </div>
+                        <div class="list--match-schedule__info">
+                            <!---->
+                            <!---->
+                            <div class="match-list__title">
+                                <h3>고양 화전 드림 풋살장 B면</h3>
+                                <!---->
+                            </div>
+                            <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                <span>6vs6</span>
+                                <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="list--match-schedule__status">
+                            <div class="match-status isHurry">
+                                <p>마감임박!</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+
+    <footer id="footer">
+        <div class="footerWrap">
+            <div class="footerNav">
+                <ul>
+                    <h3>매치</h3>
+                    <li>
+                        <a href="/">모든 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/1/matches/">여성 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/2/matches/">남녀모두 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/22/matches/">초급 매치</a>
+                    </li>
+                    <li>
+                        <a href="/explore/3/matches/">중급 매치</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footerDul">
+                <h3>서비스 지역</h3>
+                <li>
+                    <a href="/region/1/matches/">서울</a>
+                </li>
+                <li>
+                    <a href="/region/3/matches/">경기</a>
+                </li>
+                <li>
+                    <a href="/region/8/matches/">인천</a>
+                </li>
+                <li>
+                    <a href="/region/7/matches/">대전·충청</a>
+                </li>
+                <!-- <li>
+                          <a href="/region/13/matches/">충북</a>
+                        </li> -->
+                <li>
+                    <a href="/region/2/matches/">대구·경북</a>
+                </li>
+                <li>
+                    <a href="/region/11/matches/">울산</a>
+                </li>
+                <li>
+                    <a href="/region/10/matches/">부산</a>
+                </li>
+                <li>
+                    <a href="/region/6/matches/">광주</a>
+                </li>
+            </div>
+            <ul>
+                <h3>플랩풋볼</h3>
+                <li>
+                    <a href="/about/">플랩풋볼 소개</a>
+                </li>
+                <li>
+                    <a href="/manager/apply/">매니저 지원</a>
+                </li>
+                <li>
+                    <a href="https://www.notion.so/LET-S-PLAB-4718d190580047e6ab6ecb34a0dac215">채용</a>
+                </li>
+                <li>
+                    <a href="/cs/6/topics/">공지사항</a>
+                </li>
+                <li>
+                    <a href="/cs/">자주 묻는 질문</a>
+                </li>
+                <li>
+                    <a href="http://pf.kakao.com/_xmxhlAC">1:1 문의</a>
+                </li>
+            </ul>
+            <ul>
+                <h3>소셜 미디어</h3>
+                <li>
+                    <a href="https://www.instagram.com/plabfootball/" target="_blank">인스타그램</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                        target="_blank">페이스북</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">페이스북 그룹</a>
+                </li>
+            </ul>
+            <div class="company">
+                <h2><a href="/">plabfootball.com</a></h3>
+                    <p>풋살하고 싶을 땐, 플랩풋볼</p>
+                    <span><a href="/term/">이용 약관 | </a><a href="/privacy/">개인정보 처리방침 | </a><a
+                            href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6508100575">사업자 정보 확인</a></span><br>
+                    <span>플랩풋볼 | 서울특별시 마포구 잔다리로31 제우피스빌딩 2층 | contact@plabfootball.com</span>
+                    <span>주식회사 마이플레이컴퍼니 | 사업자번호 650-81-00575 | 대표 강동규 | 통신판매업 신고 2020-서울마포-4411</span>
+                    <span class="copyright">Copyright <b>PLAB</b> All rights reserved.</span>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+
+
+
+</body>
+
+</html>
