@@ -5,6 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <!-- Anti-flicker snippet (recommended)  -->
+        <style>
+                .async-hide {
+                    opacity: 0 !important
+                }
+            </style>
+            <script>(function (a, s, y, n, c, h, i, d, e) {
+                    s.className += ' ' + y; h.start = 1 * new Date;
+                    h.end = i = function () { s.className = s.className.replace(RegExp(' ?' + y), '') };
+                    (a[n] = a[n] || []).hide = h; setTimeout(function () { i(); h.end = null }, c); h.timeout = c;
+                })(window, document.documentElement, 'async-hide', 'dataLayer', 500,
+                    { 'UA-125313896-1': true });</script>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125313896-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', 'UA-125313896-1', { 'optimize_id': 'GTM-MMP575T' });
+                gtag('config', 'AW-789531225');
+            </script>
+            <!-- End Google Analytics -->
+    
+    <!--vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,6 +49,8 @@
     <link rel="stylesheet" type="text/css" href="styles1623313680.css">
     <script type="text/javascript" src="moment.js"></script>
     <script type="text/javascript" src="moment-with-locales.js"></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- slick -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -45,6 +76,16 @@
         })
     </script>
 
+    <!-- csrf_token -->
+    <script type="text/javascript">
+        var csrf_token = '9MoTfHHU4O3OUhUXN62nSUtj40tH8sIirOuyJwViBgv7Y94lWDOQBAfUAiIfBJR4'
+        var config = {
+            headers: {
+                'X-CSRFToken': csrf_token,
+                'Authorization': 'pak 80fee2d601a980c5ac899af2ec47a9719c46bf7cfbfb98ba90d7b667f3e4dd58'
+                }
+            };
+        </script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
@@ -3058,9 +3099,8 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel--container">
+            <!-- <div class="carousel--container">
                 <ul class="carousel--wrapper slick-initialized slick-slider slick-dotted">
-                    <!-- 슬라이드 main 배너 -->
                     <div class="slick-list draggable">
                         <div class="slick-track"
                             style="opacity: 1; width: 10384px; transform: translate3d(-1888px, 0px, 0px);">
@@ -3090,7 +3130,6 @@
                                     </div>
                                 </a></li>
 
-                            <!-- main 사진을 중앙에 보여주고 그 외 사진은 숨겨놓음 -->
                             <li class="carousel--hero slick-slide slick-cloned" data-slick-index="5" aria-hidden="true"
                                 tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
                                     <div class="carousel--img"><img src="images/img1.gif" class="carousel--img_m">
@@ -3126,8 +3165,22 @@
                         </li>
                     </ul>
                 </ul>
+            </div> -->
+            <!-- 메인 슬라이드 배너 -->
+            <div class="carousel--container">
+                <ul class="carousel--wrapper">
+                    <li v-for="(mainBanner, index) in mainBanners" class="carousel--hero" :key="mainBanner.id">
+                        <a :href="mainBanner.link">
+                            <div class="carousel--img">
+                                <img :src="mainBanner.image_m" class="carousel--img_m">
+                                <img :src="mainBanner.image" class="carousel--img_pc">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
-
+            
+            <!-- 날짜 슬라이드 -->
             <div class="main--match--container">
                  <div id="dateNav" class="sub-header">
                     <div class="tabWrap">
@@ -3489,13 +3542,20 @@
             //var is_first = false;
             currentDate = moment().format('YYYY-MM-D');
 
+            // function showBanners() {
+            //     home.$data.showBannerList = true
+            // }
+
             // vue 시작?
             var home = new Vue({
                 delimiters: ['[[', ']]'],
                 el: '#app',
                 data: {
-                    currentDate: '',
-                    matchDays: [],
+                    mainBanners: [],    // 메인 슬라이드 배너
+                    noFilters: false, // 메인 슬라이드 배너 관련 필요..
+                    //mainListBanners: [],
+                    currentDate: '',    //현재 날짜
+                    matchDays: [],  
                     currentMatches: [],
                     currentMatchesNum: []
                 },
@@ -3521,8 +3581,10 @@
 
                     //this.fetchMatches()
                     this.fetchDateSwipe()
+                    this.fetchMainBanner()
                 },
                 methods:{
+                    // 날짜 슬라이드 초기값 설정
                     fetchDateSwipe(){
                         var currentDateSlide = this.matchDays.findIndex(i => i.is_current == true)
                         $(document).ready(function () {
@@ -3547,6 +3609,7 @@
                             });
                         });
                     },
+                    // 날짜 슬라이드
                     dataMatches: function(getDate, index){
                         this.currentDate = getDate
                         //this.fetchMatches()
@@ -3555,6 +3618,55 @@
                         this.matchDays[beforeCurrent].is_current = false
                         this.matchDays[index].is_current = true
                     },
+                    // 메인 슬라이드 배너 가져오기
+                    fetchMainBanner() {
+                        var v = this
+                        axios.get('http://localhost:8080/banner', config)
+                            .then(function (res) {
+                                console.log(res.data)
+                                v.mainBanners = res.data
+                                v.swipeMainBanner()
+                                console.log(v.mainBanners.length)
+                                console.log(v.mainBanners)
+                            })
+                            .catch(function (err) { })
+                    },
+                    swipeMainBanner() {
+                        $(document).ready(function () {
+                            $('.carousel--wrapper').slick({
+                                dots: true,
+                                infinite: true,
+                                autoplay: true,
+                                autoplaySpeed: 2000,
+                                arrows: false,
+                                customPaging: function (slider, i) {
+                                    var thumb = $(slider.$slides[i]).data();
+                                    return '<div class="dots-inner"><a onclick="showBanners()"><strong>' + (i + 1) + ' </strong> |' + slider.$slides.length + '</a></div>';
+                                },
+                                responsive: [
+                                    {
+                                        breakpoint: 768,
+                                        settings: {
+                                            arrows: false,
+                                            centerMode: true,
+                                            centerPadding: '20px',
+                                            slidesToShow: 1
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 480,
+                                        settings: {
+                                            arrows: false,
+                                            centerMode: true,
+                                            centerPadding: '10px',
+                                            slidesToShow: 1
+                                        }
+                                    }
+                                ]
+                            });
+                        });
+                    },
+
                 },
                 watch: {
 

@@ -629,9 +629,8 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel--container">
+<!--             <div class="carousel--container">
                 <ul class="carousel--wrapper slick-initialized slick-slider slick-dotted">
-                    <!-- 슬라이드 main -->
                     <div class="slick-list draggable">
                         <div class="slick-track"
                             style="opacity: 1; width: 10384px; transform: translate3d(-1888px, 0px, 0px);">
@@ -661,7 +660,7 @@
                                     </div>
                                 </a></li>
 
-                            <!-- main 사진을 중앙에 보여주고 그 외 사진은 숨겨놓음 -->
+                            
                             <li class="carousel--hero slick-slide slick-cloned" data-slick-index="5" aria-hidden="true"
                                 tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
                                     <div class="carousel--img"><img src="images/img1.gif" class="carousel--img_m"> <img
@@ -694,8 +693,20 @@
                         </li>
                     </ul>
                 </ul>
+            </div> -->
+            <div class="carousel--container">
+                <ul class="carousel--wrapper">
+                    <li v-for="(mainBanner, index) in mainBanners" class="carousel--hero" :key="mainBanner.id">
+                        <a :href="mainBanner.link">
+                            <div class="carousel--img">
+                                <img :src="mainBanner.image_m" class="carousel--img_m">
+                                <img :src="mainBanner.image" class="carousel--img_pc">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
-
+            
             <div class="main--match--container">
                 <div id="dateNav" class="sub-header">
                     <div class="tabWrap">
