@@ -1,0 +1,3775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <!-- 메인배너 슬라이더 -->
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="styles1623313680.css">
+    <script type="text/javascript" src="moment.js"></script>
+    <script type="text/javascript" src="moment-with-locales.js"></script>
+    <!-- slick -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-146052-10', 'getbootstrap.com');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#sex_m').focus();
+        })
+    </script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+        /* CSS Document */
+        body,
+        html {
+            margin: 0;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', 'dotum', 'gulim', sans-serif;
+            color: #333;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            transition: 0.25s;
+            -webkit-transition: 0.25s;
+            -moz-transition: 0.25s;
+            -o-transition: 0.25s;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        img {
+            border: 0 none;
+        }
+
+        a {
+            outline: none;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+
+        ol,
+        ul,
+        li {
+            list-style: none
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: keep-all;
+            overflow: auto;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', 'dotum', 'gulim', sans-serif;
+        }
+
+        pre a {
+            color: #3534A5;
+            text-decoration: underline;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* 초기화 */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        /*legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}*/
+        img {
+            vertical-align: middle;
+        }
+
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', dotum, sans-serif;
+            font-size: 1em
+        }
+
+        input[type="submit"] {
+            cursor: pointer
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+        }
+
+        select {
+            margin: 0
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            word-break: break-all
+        }
+
+        hr {
+            display: none
+        }
+
+        pre {
+            font-size: 1.1em
+        }
+
+        *,
+        :after,
+        :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        /*FORM*/
+        form p {
+            font-size: 12px;
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+
+        /*INPUT*/
+        input[type=text],
+        input[type=password],
+        textarea,
+        select {
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            outline: none;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus,
+        textarea:focus,
+        select:focus {
+            border: 1px solid #3540A5 !important;
+        }
+
+        input {
+            padding: 15px 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            box-shadow: none;
+            outline: none;
+            background-color: #fafafa;
+            -webkit-appearance: none;
+            appearance: none;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        select {
+            background: url('./../img/ic_arrow.png') no-repeat 95% 50%;
+            padding: 15px 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            box-shadow: none;
+            outline: none;
+            color: #333333;
+            background-color: #fafafa;
+            -webkit-appearance: none;
+            font-size: 16px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-earance: none;
+            -o-appearance: none;
+            appearance: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        input.inputFull,
+        select.inputFull {
+            width: 100%;
+        }
+
+        .inputWrap50 {
+            width: 49%;
+            float: left;
+        }
+
+        .inputWrap50:first-child {
+            margin-right: 1%;
+        }
+
+        .inputWrap50:nth-child(2) {
+            margin-left: 1%;
+        }
+
+        .inputWrap33 {
+            width: 32%;
+            float: left;
+            margin-left: 2%;
+        }
+
+        .inputWrap33:first-child {
+            margin-left: 0;
+        }
+
+        .inputWrap33 input,
+        .inputWrap33 textarea,
+        .inputWrap33 select {
+            width: 100%;
+        }
+
+        .select50R {}
+
+        .inputWrap {
+            margin: 5px 0;
+            /**display: inline-flex;**/
+            width: 100%;
+            overflow: auto;
+        }
+
+        .inputDWrap {
+            overflow: auto;
+            margin: 5px 0;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .input3Wrap {
+            margin: 5px 0;
+            /**display: inline-flex;**/
+            width: 100%;
+            overflow: auto;
+        }
+
+        .input3Wrap select:nth-child(3) {
+            margin: 0 2%;
+        }
+
+        form.orderForm {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .orderTitle {
+            margin: 0 20px;
+            padding-top: 30px;
+        }
+
+        .orderTitle h2 {
+            font-size: 24px;
+            font-weight: 300;
+            border-bottom: 3px solid #FFC645;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        form.orderForm input {
+            padding: 12px 10px;
+        }
+
+        form.orderForm .inputWrap label {
+            float: left;
+            width: 25%;
+            margin: inherit;
+            line-height: 35px;
+            display: inherit;
+            font-size: 14px;
+        }
+
+        form.orderForm .inputWrap span {
+            font-size: 12px;
+            word-break: keep-all;
+        }
+
+        form.orderForm .inputWrap .nowParking {
+            font-size: 12px;
+            color: #14B569;
+            font-weight: 600;
+            margin-left: 0;
+            margin-top: 10px;
+            word-break: keep-all;
+        }
+
+        form.orderForm .inputWrap .inputNotice {
+            font-size: 12px;
+            color: #14B569;
+            margin-left: 0;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            word-break: keep-all;
+        }
+
+        form.orderForm .inputWrap .nowParking a,
+        form.orderForm .inputWrap .inputNotice a {
+            display: block;
+            text-decoration: underline;
+            color: #3534A5;
+            padding: 5px 0;
+        }
+
+        form.orderForm fieldset h3 {
+            margin-bottom: 10px;
+        }
+
+        form.orderForm .orderInfo {
+            padding: 20px;
+        }
+
+        form.orderForm .orderInfo h3 {
+            color: #3540A5;
+        }
+
+        form.orderForm .orderPay {
+            background-color: #3540A5;
+            color: white;
+            padding: 20px;
+        }
+
+        form.orderForm .orderPay fieldset {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        form.orderForm .orderPay .payment h3 {
+            color: #FFC645;
+        }
+
+        form.orderForm .inputWrap input {}
+
+        form.orderForm .inputWrapper {
+            width: 75%;
+            float: left;
+        }
+
+        .radioWrap {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .radioBtn {
+            display: inline-block;
+            position: relative;
+            padding-left: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .radioBtn input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radioBtn input:checked~.checkmark {
+            background-color: #ea3e42;
+            border: 1px solid #ea3e42;
+        }
+
+        .radioBtn input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .radioBtn .checkmark:after {
+            top: 6px;
+            left: 6px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border: 1px solid #ddd;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        /*CheckboxCustom*/
+        .checkbox {
+            position: absolute;
+            opacity: 0;
+            width: inherit;
+        }
+
+        .checkbox+label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .checkbox+label.stdCheck {
+            font-size: 18px;
+            display: block;
+        }
+
+        .checkbox+label.stdCheck p {
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .filterItem span {
+            font-size: 12px;
+            color: #999;
+            display: block;
+        }
+
+        .checkbox:hover+label:before {}
+
+        .checkbox:focus+label:before {}
+
+        .checkbox:checked+label:before {
+            background: #3540A5;
+        }
+
+        .checkbox:checked+label:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            background: #dddddd;
+            width: 2px;
+            height: 2px;
+            box-shadow:
+                2px 0 0 white,
+                4px 0 0 white,
+                4px -2px 0 white,
+                4px -4px 0 white,
+                4px -6px 0 white,
+                4px -8px 0 white;
+            transform: rotate(45deg);
+        }
+
+        .checkbox+label:before {
+            content: '';
+            margin-right: 5px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            background: #dddddd;
+            border-radius: 100px;
+        }
+
+        .filterItem .checkbox+label:before {
+            margin-top: 4px;
+            float: left;
+            width: 27px;
+            height: 27px;
+        }
+
+        .filterItem .checkbox:checked+label:after {
+            left: 8px;
+            top: 17px;
+        }
+
+        .container {
+            max-width: none;
+        }
+
+        /* 슬라이드바 */
+        /* NEW-CAROUSEL */
+        .carousel--container {
+            border-bottom: 10px solid #eee;
+        }
+
+        .carousel--loading {
+            padding: 20px 15px;
+        }
+
+        .carousel--loading .loading {
+            width: 100%;
+            border-radius: 20px;
+            height: 180px;
+            background-color: #eeeeee;
+            display: block;
+            text-align: center;
+        }
+
+        .carousel--wrapper {
+            display: none;
+        }
+
+        .carousel--wrapper .carousel--hero:first-child {
+            display: block;
+        }
+
+        .carousel--wrapper.slick-initialized .carousel--hero {
+            display: block;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots {
+            display: flex;
+            bottom: 50px;
+            padding: 0 15px;
+            width: initial;
+            right: 20px;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots li {
+            width: 16px;
+            height: 3px;
+            margin: 0;
+            margin-right: 2px;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots li button {
+            width: 16px;
+            height: 3px;
+            background-color: #eee;
+            display: block;
+            margin-right: 2px;
+            padding: 0;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots li button:before {
+            all: unset;
+        }
+
+        .carousel--container .carousel--wrapper .slick-dots .slick-active button {
+            background-color: #FFC645;
+        }
+
+        .carousel--hero {
+            padding: 20px 5px;
+            background-color: white;
+            margin-bottom: 6px;
+        }
+
+        .carousel--hero.slick-center {}
+
+        .carousel--ipsum {
+            background-color: #eeeeee;
+            display: block;
+            width: 90%;
+            height: 152px;
+            border-radius: 20px;
+            margin: 0 auto;
+            background-size: cover;
+        }
+
+        .carousel--img img {
+            width: 100%;
+            border-radius: 20px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .carousel--title {
+            padding: 20px 20px;
+        }
+
+        .carousel--title p {
+            font-size: 12px;
+        }
+
+        .carousel--title .carousel--title__starred {
+            color: #FF5D5D;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .carousel--title h3 {
+            font-size: 18px;
+            margin: 2px 0;
+        }
+
+        .carousel--navi {
+            margin-top: 10px;
+        }
+
+        .carousel--navi ul {
+            display: flex;
+        }
+
+        .carousel--navi ul li {
+            width: 24px;
+            height: 3px;
+            background-color: #eee;
+            display: block;
+            margin-right: 2px;
+        }
+
+        .carousel--navi ul li.is--selected {
+            background-color: #FF5D5D;
+        }
+
+        .carousel--card {
+            width: 100%;
+            border-radius: 20px;
+            height: 180px;
+            display: flex;
+            position: relative;
+            padding: 20px;
+        }
+
+        .carousel--card.pttrn {
+            background-size: 64px;
+            background-position: center;
+        }
+
+        .carousel--card.odl--mens {
+            background-image: url('./../img/img_odl_slidecover1.jpg');
+            background-size: cover;
+            background-position: right bottom;
+        }
+
+        .carousel--card.odl--womens {
+            background-image: url('./../img/img_odl_slidecover2.jpg');
+            background-size: cover;
+            background-position: left bottom;
+        }
+
+        .carousel--card .carousel--card--overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            border-radius: 20px 0 0 20px;
+            padding: 20px;
+        }
+
+        .carousel--card .carousel--card--overlay.odl--mens {
+            background-image: url('./../img/img_odl_overlay.png');
+        }
+
+        .carousel--card .carousel--card--overlay.odl--womens {
+            background-image: url('./../img/img_odl_overlay_w.png');
+        }
+
+        .carousel--card .carousel--card--overlay .carousel--card--title {
+            width: 60%;
+        }
+
+        .carousel--card .carousel--card--overlay .carousel--card--title h3 {
+            font-size: 18px;
+            word-break: keep-all;
+        }
+
+        .carousel--card .carousel--card--overlay .carousel--card--title span {
+            color: #333;
+            border-radius: 20px;
+            padding: 4px 8px;
+            font-size: 11px;
+            background-color: #ffc645;
+        }
+
+        .carousel--card .carousel--card--title {
+            color: white;
+            margin-top: 20px;
+        }
+
+        .carousel--card .carousel--card--title img {
+            height: 14px;
+        }
+
+        .carousel--card .carousel--card--title p {
+            font-size: 12px;
+        }
+
+        .carousel--card .carousel--card--title h3 {
+            font-size: 24px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .carousel--card .carousel--card--title span {
+            color: #ffc645;
+            font-size: 12px;
+        }
+
+        .carousel--card .carousel--card--emoji {
+            position: absolute;
+            font-size: 90px;
+            right: 7%;
+            bottom: 1%;
+        }
+
+        @media (max-width: 480px) {
+            .carousel--img img {
+                height: 50%;
+            }
+
+            .carousel--card {
+                height: 180px;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: block;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: none;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 1023px) {
+            .carousel--card {
+                height: 260px;
+                padding: 30px;
+            }
+
+            .carousel--card .carousel--card--title {
+                color: white;
+                margin-top: 20px;
+            }
+
+            .carousel--card .carousel--card--title p {
+                font-size: 20px;
+            }
+
+            .carousel--card .carousel--card--title h3 {
+                font-size: 48px;
+                margin-bottom: 30px;
+            }
+
+            .carousel--card .carousel--card--title span {
+                color: #ffc645;
+                font-size: 18px;
+            }
+
+            .carousel--card .carousel--card--emoji {
+                font-size: 130px;
+                right: 7%;
+                bottom: 5%;
+            }
+
+            .carousel--img img {
+                height: 50%;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: block;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .carousel--container {
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 50px;
+            }
+
+            .carousel--container {
+                background-color: #fafafa;
+                margin: 0 auto;
+            }
+
+            .carousel--container .slick-slider {
+                max-width: 1024px;
+                padding: 0 40px;
+                margin: 0 auto;
+            }
+
+            .carousel--hero {
+                background-color: #fafafa;
+                margin: 0 auto;
+                margin-bottom: 6px;
+                padding: 20px 0;
+            }
+
+            .carousel--ipsum {
+                height: 320px;
+                background-color: #333;
+                ;
+            }
+
+            .carousel--title {
+                padding: 40px 70px;
+            }
+
+            .carousel--title .carousel--title__starred {
+                font-size: 14px;
+            }
+
+            .carousel--title h3 {
+                font-size: 24px;
+            }
+
+            .carousel--title p {
+                font-size: 14px;
+            }
+
+            .carousel--navi ul li {
+                background-color: #ccc;
+            }
+
+            .carousel--card {
+                height: 360px;
+                padding: 50px;
+            }
+
+            .carousel--card .carousel--card--title {
+                color: white;
+                margin-top: 20px;
+            }
+
+            .carousel--card .carousel--card--title p {
+                font-size: 20px;
+            }
+
+            .carousel--card .carousel--card--title h3 {
+                font-size: 54px;
+                margin-bottom: 30px;
+            }
+
+            .carousel--card .carousel--card--title span {
+                color: #ffc645;
+                font-size: 18px;
+            }
+
+            .carousel--card .carousel--card--emoji {
+                font-size: 170px;
+                right: 7%;
+                bottom: 5%;
+            }
+
+            .carousel--img img {
+                height: 320px;
+            }
+
+            .slick-slide img.carousel--img_m {
+                display: none;
+            }
+
+            .slick-slide img.carousel--img_pc {
+                display: block;
+            }
+
+            .carousel--card .carousel--card--overlay {
+                padding: 50px;
+            }
+
+            .carousel--card .carousel--card--title img {
+                height: 24px;
+            }
+
+            .carousel--card .carousel--card--overlay .carousel--card--title h3 {
+                font-size: 27px;
+            }
+
+            .carousel--container .carousel--wrapper .slick-dots {
+                right: 80px;
+                bottom: 80px;
+            }
+        }
+
+        /* Slider */
+        .slick-slider {
+            position: relative;
+
+            display: block;
+            box-sizing: border-box;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .slick-list {
+            position: relative;
+
+            display: block;
+            overflow: hidden;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .slick-list:focus {
+            outline: none;
+        }
+
+        .slick-list.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .slick-slider .slick-track,
+        .slick-slider .slick-list {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slick-track {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slick-track:before,
+        .slick-track:after {
+            display: table;
+
+            content: '';
+        }
+
+        .slick-track:after {
+            clear: both;
+        }
+
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+
+        .slick-slide {
+            display: none;
+            float: left;
+
+            height: 100%;
+            min-height: 1px;
+        }
+
+        [dir='rtl'] .slick-slide {
+            float: right;
+        }
+
+        .slick-slide img {
+            display: block;
+        }
+
+        .slick-slide.slick-loading img {
+            display: none;
+        }
+
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+
+        .slick-initialized .slick-slide {
+            display: block;
+        }
+
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+
+        .slick-vertical .slick-slide {
+            display: block;
+
+            height: auto;
+
+            border: 1px solid transparent;
+        }
+
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+
+
+        /* Arrows */
+        .slick-prev,
+        .slick-next {
+            font-size: 0;
+            line-height: 0;
+
+            position: absolute;
+            top: 50%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+
+            cursor: pointer;
+
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .slick-prev:hover,
+        .slick-prev:focus,
+        .slick-next:hover,
+        .slick-next:focus {
+            color: transparent;
+            outline: none;
+            background: transparent;
+        }
+
+        .slick-prev:hover:before,
+        .slick-prev:focus:before,
+        .slick-next:hover:before,
+        .slick-next:focus:before {
+            opacity: 1;
+        }
+
+        .slick-prev.slick-disabled:before,
+        .slick-next.slick-disabled:before {
+            opacity: .25;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: 'slick';
+            font-size: 20px;
+            line-height: 1;
+
+            opacity: .75;
+            color: white;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slick-prev {
+            left: -25px;
+        }
+
+        [dir='rtl'] .slick-prev {
+            right: -25px;
+            left: auto;
+        }
+
+        .slick-prev:before {
+            content: '←';
+        }
+
+        [dir='rtl'] .slick-prev:before {
+            content: '→';
+        }
+
+        .slick-next {
+            right: -25px;
+        }
+
+        [dir='rtl'] .slick-next {
+            right: auto;
+            left: -25px;
+        }
+
+        .slick-next:before {
+            content: '→';
+        }
+
+        [dir='rtl'] .slick-next:before {
+            content: '←';
+        }
+
+        /* Dots */
+        .slick-dotted.slick-slider {
+            margin-bottom: 30px;
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: -25px;
+
+            display: block;
+
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            list-style: none;
+
+            text-align: center;
+        }
+
+        .slick-dots li {
+            position: relative;
+
+            display: inline-block;
+
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+            padding: 0;
+
+            cursor: pointer;
+        }
+
+        .slick-dots li button {
+            font-size: 0;
+            line-height: 0;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+
+            cursor: pointer;
+
+            color: transparent;
+            border: 0;
+            outline: none;
+            background: transparent;
+        }
+
+        .slick-dots li button:hover,
+        .slick-dots li button:focus {
+            outline: none;
+        }
+
+        .slick-dots li button:hover:before,
+        .slick-dots li button:focus:before {
+            opacity: 1;
+        }
+
+        .slick-dots li button:before {
+            font-family: 'slick';
+            font-size: 6px;
+            line-height: 20px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 20px;
+            height: 20px;
+
+            content: '•';
+            text-align: center;
+
+            opacity: .25;
+            color: black;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slick-dots li.slick-active button:before {
+            opacity: .75;
+            color: black;
+        }
+
+
+
+        /* end 슬라이드바 */
+
+        /* 날짜슬라이드바 */
+        /*NEW-DATE-NAV*/
+        #dateNav {
+            display: inherit;
+            background-color: white;
+            z-index: 2;
+            left: 0;
+            position: sticky;
+            top: 0;
+        }
+
+        #dateNav .tabWrap {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 9px;
+        }
+
+        #dateNav .tabWrap .slick-prev:before,
+        #dateNav .tabWrap .slick-next:before {
+            color: #3540A5;
+        }
+
+        .dateWrap.isActive {
+            background-color: #3534A5;
+            color: white;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            #dateNav {
+                padding: 20px 0;
+            }
+
+            #dateNav .tabWrap {
+                padding: 10px 30px;
+            }
+
+            #dateNav .tabWrap .slick-slider {
+                padding: 0;
+            }
+
+            #dateNav .tabWrap .slick-slider .swipe-tab {
+                margin: 0 5px;
+            }
+        }
+
+        /* .main--match--container {} */
+
+
+        /* test */
+
+
+        /*SHOOW*/
+        .show {
+            margin: 0;
+        }
+
+        .show .showBanner {}
+
+        .slick-slider .slick-list {
+            width: 100%;
+        }
+
+        .show .showBanner.slick-current {
+            opacity: 1;
+        }
+
+        .show .showBanner img {
+            width: 100%;
+            box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .show .slick-dots {
+            bottom: 20px;
+            color: white;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .container .slick-dotted.slick-slider {
+            margin-bottom: 0;
+        }
+
+        .show .slick-dots li {
+            width: initial;
+            margin: 0 2px;
+        }
+
+        .show .slick-dots li button {
+            background-color: white;
+            opacity: 0.5;
+            border-radius: 6px;
+            width: 7px;
+            height: 7px;
+            padding: 0;
+        }
+
+        .show .slick-dots li.slick-active button {
+            opacity: 1;
+            width: 27px;
+        }
+
+        .show .slick-dots li button:before {
+            content: '';
+            line-height: initial;
+        }
+
+        .show .slick-dots li.slick-active button:before {
+            color: white;
+        }
+
+        .show .slick-dots li.slick-active {}
+
+        @media only screen and (max-width: 1024px) {
+            .show .hBannerPC {
+                display: none;
+            }
+
+            .show .hBannerM {
+                display: initial;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .show {
+                margin: 0 auto;
+                padding: 0;
+                max-width: 960px;
+            }
+
+            .show .hBannerPC {
+                display: initial;
+            }
+
+            .show .hBannerM {
+                display: none;
+            }
+
+            .show .showBanner {
+                width: 720px;
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+            }
+
+            .show .showBanner .gradWrap {
+                position: relative;
+                max-width: 1024px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .show .slick-list {
+                border-radius: 20px;
+            }
+
+            /*
+	.show .showBanner a:before {
+		content: "";
+		background-image: linear-gradient(to left, rgba(240,240,240,0), rgba(240,240,240,1));
+		width: 200px;
+		height: 100%;
+		display: block;
+		position: absolute;
+	}
+	.show .showBanner a:after {
+		content: "";
+		background-image: linear-gradient(to right, rgba(240,240,240,0), rgba(240,240,240,1));
+		width: 200px;
+		height: 100%;
+		right: 0;
+		top:0 ;
+		display: block;
+		position: absolute;
+	}*/
+            .show .showBanner a {
+                max-width: 1024px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .show .showBanner img {
+                width: 100%;
+                margin: 0 auto;
+                border-radius: inherit;
+                box-shadow: inherit;
+            }
+
+            .show .slick-dots {
+                bottom: 50px;
+                color: white;
+            }
+
+            .container .slick-dotted.slick-slider {
+                margin-bottom: 0;
+            }
+
+            .show .slick-dots li {
+                width: initial;
+                margin: 0 10px;
+            }
+
+            .show .slick-dots li button {
+                background-color: white;
+                opacity: 0.3;
+                border-radius: 6px;
+                width: 12px;
+                height: 12px;
+            }
+
+            .show .slick-dots li.slick-active button {
+                opacity: 1;
+                width: 48px;
+            }
+
+            .show .slick-dots li button:before {
+                content: '';
+                line-height: initial;
+            }
+
+            .show .slick-dots li.slick-active button:before {
+                color: white;
+            }
+
+            .show .slick-dots li.slick-active {}
+        }
+
+
+        /*SWIPETAB*/
+        .swipe-tab-content {
+            position: relative;
+            min-height: 365px;
+
+
+        }
+
+        @media screen and (min-width: 767px) {
+            .swipe-tab-content {
+                min-height: 500px;
+            }
+        }
+
+        .swipe-tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: 0;
+            color: $swipe-tab-color;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 2px solid rgba($swipe-active-tab-color, 0);
+            transition: all 0.5s;
+        }
+
+        .swipe-tab:hover {}
+
+        .swipe-tab.active-tab {
+            color: white;
+            font-weight: bold;
+        }
+
+        .swipe-tab .dateWrap {
+            border-radius: 40px;
+            padding: 13px 0;
+            margin: 0 3px;
+            display: none;
+        }
+
+        .swipe-tab .dateWrap:first-child {
+            display: none;
+        }
+
+        .swipe-tab.slick-initialized .dateWrap {
+            display: block;
+        }
+
+        .swipe-tab .dateWrap p {
+            font-size: 18px;
+            line-height: 14px;
+            padding-top: 8px;
+            font-weight: 400;
+        }
+
+        .swipe-tab .dateWrap span {
+            font-size: 11px;
+        }
+
+        .swipe-tab.active-tab .dateWrap {
+            background-color: #3540A5;
+        }
+
+        /* .swipe-tab .dateWrap:hover {
+	background-color: #fafafa;
+}
+.swipe-tab.active-tab .dateWrap:hover {
+  background-color: #3540A5;
+} */
+
+
+        .main-container {
+            margin: 0 auto;
+        }
+
+        .main-container .swipe-tabs-container {
+            margin-bottom: 20px;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .main-container .bottomBanner {
+            margin-top: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .main-container .bottomBanner span {
+                max-width: 1024px;
+                font-size: 24px;
+            }
+        }
+
+        /*stickyDateNAV*/
+        #dateNav {
+            display: inherit;
+            background-color: white;
+            z-index: 2;
+            left: 0;
+        }
+
+        #dateNav.thanksgiving .tabWrap {
+            background-color: #462839;
+            color: white;
+        }
+
+        #dateNav.thanksgiving .slick-track {
+            display: flex;
+            align-items: center;
+        }
+
+        #dateNav.thanksgiving .tabWrap .dateWrap.isActive {
+            background-color: #ffc645;
+            color: #482A3B;
+        }
+
+        #dateNav .tabWrap {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 9px;
+        }
+
+        #dateNav .tabWrap .slick-prev:before,
+        #dateNav .tabWrap .slick-next:before {
+            color: #3540A5;
+        }
+
+        /* The sticky class is added to the header with JS when it reaches its scroll position */
+        .sticky {
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+        .sticky+.content {
+            padding-top: 102px;
+        }
+
+
+        @media only screen and (min-width: 1024px) {
+            #dateNav {}
+
+            #dateNav .tabWrap {
+                padding: 10px 30px;
+            }
+
+            #dateNav .tabWrap .slick-slider {
+                padding: 0;
+            }
+
+            #dateNav .tabWrap .slick-slider .swipe-tab {
+                margin: 0 5px;
+            }
+        }
+
+
+        /* test */
+        /* 매치필터 */
+        .main__match-filter {
+            background-color: #fafafa;
+        }
+
+        .main__match-filter ul {
+            width: 100%;
+            box-sizing: content-box;
+            overflow-x: scroll;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+            padding: 10px 0;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .main__match-filter ul li:first-child {
+            margin-left: 10px;
+        }
+
+        .main__match-filter ul li {
+            display: inline-grid;
+        }
+
+        .main__match-filter ul li a {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .main__match-filter ul li .match-filter-item--active {
+            background-color: #FFC645;
+        }
+
+        @media(min-width: 1024px) {
+            .main__match-filter {
+                background-color: white;
+            }
+
+            .main__match-filter ul {
+                padding: 10px 10px 20px 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main__match-filter ul li a {
+                font-size: 14px;
+            }
+
+            .main__match-filter ul li:first-child {
+                margin-left: 30px;
+            }
+
+            .main--match--filter .filter--results {
+                margin-left: 20px;
+            }
+        }
+
+        @media(max-width: 720px) {
+            .main__match-filter ul {
+                animation: bounce-in 1s ease;
+            }
+        }
+
+        /* 리스트매치스케쥴 */
+        .list--match-schedule--container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .main--match--filter {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .filter--results p {
+            font-size: 14px;
+        }
+
+        .filter--edit-my-stad {
+            width: 100%;
+            margin-top: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            text-align: right;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .filter--wrapper {
+            position: relative;
+        }
+
+        .filter--wrapper span {
+            font-size: 12px;
+            margin-left: 10px;
+            padding: 2px 15px 2px 3px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .filter--wrapper span.isFilter {
+            border-bottom: 2px solid #FFC645;
+        }
+
+        .filter--wrapper .filter__toast {
+            position: absolute;
+            background-color: #FFC645;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 6px;
+            z-index: 1;
+            bottom: -30px;
+            right: 50%;
+            left: 55%;
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+            font-size: 11px;
+            width: fit-content;
+            text-align: center;
+            margin: 0 -70px;
+        }
+
+        .filter--wrapper .filter__toast:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid #ffc645;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            top: -5px;
+        }
+
+        .filter--wrapper span:after {
+            content: '';
+            /* width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 7px solid #333;
+	position: absolute;
+	right: 0;
+	bottom: 7px; */
+            border: solid #333;
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 3px;
+            position: absolute;
+            right: 2px;
+            bottom: 10px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .list--match-schedule--item a {
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 15px 15px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__time {
+            width: 15%;
+            font-weight: 700;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__time span {
+            font-size: 10px;
+            color: #3534A5;
+            font-weight: 400;
+            ;
+        }
+
+        .list--match-schedule--item .list--match-schedule__info {
+            width: 62%;
+            padding-right: 10px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__info .match-date {
+            margin-bottom: 5px;
+        }
+
+        .list--match-schedule--item .list--match-schedule__info h3 {
+            font-size: 14px;
+            font-weight: 400;
+            word-break: keep-all;
+        }
+
+        .list--match-schedule--item .list--match--banner {
+            margin: 20px 10px;
+            padding: 30px;
+            border-radius: 30px;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /* 푸터
+        .footer {
+            text-align: center;
+            padding: 30px 50px;
+        }
+
+        .footer li {
+            position: relative;
+            display: inline;
+            padding: 0 7px 0 10px;
+            white-space: nowrap;
+        }
+
+        .footer li:before {
+            content: '';
+            width: 1px;
+            height: 12px;
+            background-color: #dbdbdb;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .footer li:first-child:before {
+            width: 0;
+        }
+
+        .footer address {
+            padding-top: 15px;
+        } */
+
+        /*FOOTER*/
+
+
+        #footer {
+            background-color: #2a2a2a;
+        }
+
+        .footerWrap {
+            overflow: auto;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 50px 20px 100px 20px;
+        }
+
+        .footerNav {
+            color: white;
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+
+        .footerNav ul {
+            margin-bottom: 30px;
+            width: 50%;
+            float: left;
+        }
+
+        .footerNav h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .footerNav ul li {
+            padding: 2px 0;
+        }
+
+        .footerNav a {
+            color: white;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .footerWrap .newLogo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footerWrap .newLogo img {
+            height: 46px;
+        }
+
+        .footerWrap .company {
+            text-align: left;
+        }
+
+        .footerWrap .company p {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .footerWrap .company a {
+            color: #999;
+        }
+
+        .footerWrap .company h2 {
+            margin-bottom: 10px;
+        }
+
+        .footerWrap .company h2 a {
+            font-size: 16px;
+            color: white;
+            font-style: italic;
+            border-bottom: 2px solid #FFC645;
+        }
+
+        .footerWrap .company span {
+            padding: 2px 0;
+            display: block;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .footerWrap .company .copyright {
+            font-size: 12px;
+        }
+
+        @media (max-width: 1024px) {
+            .footerNav .footerDul {
+                overflow: auto;
+            }
+
+            .footerNav .footerDul li {
+                width: 45%;
+                float: left;
+            }
+
+            .footerNav {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footerNav {
+                float: initial;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .footerWrap {
+                padding: 50px 30px 100px 30px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .footerWrap .newLogo {
+                float: left;
+                margin-bottom: inherit;
+            }
+
+            .footerWrap .footerNav {
+                width: 50%;
+            }
+
+            .footerNav ul {
+                width: 25%;
+            }
+
+            .footerWrap .company {
+                margin-left: 50px;
+                text-align: left;
+                width: 40%;
+            }
+
+            .footerWrap .company h2 a {
+                font-size: 20px;
+            }
+        }
+
+        /**/
+
+        /* modal css */
+        /*MODAL-FM*/
+
+
+        /* .modal-header h3 {
+	margin-top: 0;
+	color: #42b983;
+  }
+  
+  .modal-body {
+	margin: 20px 0;
+  }
+  .modal-body .playerList li {
+	  border-bottom: 1px solid #ddd;
+	  padding: 10px 0
+  }
+  
+  .modal-default-button {
+	float: right;
+  }
+
+  
+  .modal-enter {
+	opacity: 0;
+  }
+  
+  .modal-leave-active {
+	opacity: 0;
+  }
+  
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+  } */
+        /*POPUP*/
+
+        #popUp {
+            position: fixed;
+            z-index: 5;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inherit;
+        }
+
+        #popUp .popup--wrapper {
+            width: 90%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: fit-content;
+            border-radius: 20px;
+            margin: auto;
+            background-color: #F9F6F0;
+        }
+
+        #popUp .popup--body {
+            padding: 20px 20px;
+            text-align: center;
+            word-break: keep-all;
+            color: #333;
+        }
+
+        #popUp .popup--body__content {
+            margin-bottom: 40px;
+        }
+
+        #popUp .popup--body__content img {
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        #popUp .popup--body__content h2 {
+            margin-bottom: 20px;
+            font-weight: 300;
+            font-size: 32px;
+        }
+
+        #popUp .popup--body__content h2 strong {
+            font-weight: 300;
+            position: relative;
+            display: initial;
+            padding: 0 5px;
+        }
+
+        #popUp .popup--body__content p {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        #popUp .popup--body__content h2 strong:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            bottom: 0;
+            margin: auto;
+            left: 0;
+            background-color: #FFC645;
+            z-index: -1;
+        }
+
+        #popUp .popup--body__content span {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        #popUp .popup--action .close--text {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 14px;
+            display: block;
+        }
+
+        #popUp .popup--action {
+            cursor: pointer;
+        }
+
+        #popUp .popup--btm {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background-color: #2a2a2a;
+        }
+
+        #popUp .popup--btm a {
+            color: white;
+            padding: 10px 0;
+        }
+
+        #popUp .popup--btm .popup--btm__btn {
+            display: flex;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .popup--wrapper {
+                max-width: 480px;
+                height: fit-content;
+                padding-bottom: 100px;
+            }
+        }
+
+        /*MATCH FILTER*/
+        .matchFilter {
+            margin: 0 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .matchFilter .filterWrap {
+            width: 49%;
+            padding: 10px 0;
+        }
+
+        .matchFilter .filterWrap .filterBtn {
+            background-color: #eee;
+            font-size: 14px;
+            padding: 0 10px;
+            line-height: 36px;
+            border-radius: 6px;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .matchFilter .filterWrap .filterMy:before {
+            content: '';
+        }
+
+        @media (min-width: 1024px) {
+            .matchFilter {
+                max-width: 1024px;
+            }
+        }
+
+        /*MODAL*/
+
+        .modal--container {
+            /* display: none; */
+            position: fixed;
+            z-index: 5;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .modal--container.isFull {
+            background-color: white;
+        }
+
+        .modal--container.isFull .modal--wrapper.isFull {
+            width: 100%;
+            height: initial;
+            border-radius: 0;
+            /* overflow-y: scroll; */
+            top: 0;
+            bottom: 0;
+            transform: initial;
+            position: initial;
+            overflow-y: initial;
+        }
+
+        .modal--container.isFull .modal--header {
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            background-color: white;
+        }
+
+        .modal--mask {
+            position: fixed;
+            z-index: 9998;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            display: table;
+            transition: opacity .3s ease;
+        }
+
+        .modal--wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            /* top: 0; */
+            background-color: white;
+            border-radius: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 80%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: auto;
+        }
+
+        .modal--wrapper.isFull {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            /* overflow-y: scroll; */
+            top: 0;
+            bottom: 0;
+            transform: initial;
+        }
+
+        .modal--wrapper.mngFull {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            overflow-y: hidden;
+            top: 0;
+            bottom: 0;
+            transform: initial;
+        }
+
+        /* .modal--wrapper {
+  background-color: #fefefe;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+}
+.modal--wrapper--full {
+  background-color: #fefefe;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal--wrapper.isFull {
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+	overflow-y: scroll;
+} */
+        .modal--wrapper.isFullScroll {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            overflow-y: scroll;
+        }
+
+        .modal--wrapper.isFullScroll .modal--header {
+            padding: 0;
+        }
+
+        .modal--wrapper.isFullScroll .modal--body {
+            overflow: initial;
+            height: initial;
+        }
+
+        .modal--wrapper.isFullScroll .modal--body p {
+            margin: 0;
+        }
+
+        .modal--wrapper.fit_height {
+            height: fit-content;
+        }
+
+        .modal--wrapper.isInfo .modal--body {
+            padding-bottom: 20px;
+        }
+
+        .modal--header {
+            padding: 30px 20px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal--title {}
+
+        .modal--title h2 {
+            font-size: 22px;
+        }
+
+        .modal--title p {
+            font-size: 12px;
+        }
+
+        .modal--title .title {
+            font-size: 22px;
+        }
+
+        .modal--title .phone {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+
+        /* .modal--header div.modal--title {
+	display: flex;
+	align-items: center;
+} */
+        .modal--header .modal--title .player--num {
+            width: 24px;
+            height: 24px;
+            border-radius: 24px;
+            line-height: 24px;
+            text-align: center;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+
+        .modal--header .modal--title .player--fair-point {
+            font-weight: 400;
+            margin-left: 5px;
+        }
+
+        .modal--header .modal--title.isBig {
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .modal--header .modal--close {
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* .modal--body {
+	padding: 0 20px;
+	overflow: scroll;
+	padding-bottom: 40px;
+} */
+        .modal--body {
+            overflow-y: auto;
+            padding: 20px;
+            padding-bottom: 40px;
+        }
+
+        .my--style--title {
+            font-size: 14px;
+            margin: 0;
+            background-color: #3534a5;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            width: 100%;
+            display: block;
+        }
+
+        .modal--body.no--padding {
+            padding: 0;
+        }
+
+        .modal--body .see-detail {
+            border: 1px solid #3534A5;
+            text-align: center;
+            color: #3534A5;
+            display: block;
+            padding: 10px;
+            font-size: 14px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .modal--footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn-sticky-wrapper .btn {
+            border-radius: 0 0 20px 20px;
+        }
+
+        .modal--wrapper.isFull .btn-sticky-wrapper .btn {
+            border-radius: 0;
+        }
+
+        .modal--bottom {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .modal--bottom .modal--button {
+            display: flex;
+        }
+
+        .modal--bottom .modal--button .btn {
+            border-radius: 0 0 20px 20px;
+            font-size: 14px;
+        }
+
+        .modal--bottom .modal--button .btn.half {
+            width: 50%;
+            border-radius: 0 0 20px 0;
+            font-size: 12px;
+        }
+
+        .modal--bottom .modal--button .btn.dbLeft {
+            width: 35%;
+            border-radius: 0 0 20px 0;
+            font-size: 14px;
+        }
+
+        .modal--bottom .modal--button .btn.dbRight {
+            width: 65%;
+            border-radius: 0 0 20px 0;
+            font-size: 14px;
+        }
+
+        .modal--bottom .modal--button .btn.half:first-child {
+            border-radius: 0 0 0 20px;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .modal--wrapper.isFull .modal--bottom .modal--button .btn {
+            border-radius: 0;
+        }
+
+        .filter--region--item {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .filter--region--item .btn {
+            background-color: #eee;
+            color: #999;
+        }
+
+        .filter--region--item:first-child {
+            border-bottom: 1px solid #ddd;
+            margin: 0;
+        }
+
+        .filter--region--item .btn.isSelected {
+            background-color: #FFC645;
+            color: #2a2a2a;
+        }
+
+        .filter--region--item .filter--list {
+            margin-top: 20px;
+        }
+
+        .filter--region--item .filter--list.isDisabled {
+            opacity: 0.3;
+        }
+
+        .filter--region--item .filter--list h4 {
+            font-size: 12px;
+            color: #999;
+            font-weight: 400;
+            margin-bottom: 14px;
+            margin-left: 5px;
+        }
+
+        .filter--region--item ul li {
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 15px;
+        }
+
+        .modal--info--list ul h3 {
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .modal--no-data {
+            text-align: center;
+        }
+
+        .modal--no-data h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .modal--no-data h2 p {
+            font-size: 14px;
+        }
+
+        .modal--no-data .intro-wrapper {
+            /*width: 80%;
+	margin: 0 auto;*/
+        }
+
+        .modal--no-data .intro-box {
+            text-align: center;
+        }
+
+        .modal--no-data .intro-box .intro {
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eeeeee;
+            margin-bottom: 20px;
+        }
+
+        .modal--no-data .desc {}
+
+        .modal--no-data .desc li {
+            display: flex;
+            padding: 10px 0px;
+            align-items: center;
+        }
+
+        .modal--no-data .desc li p {
+            font-size: 12px;
+        }
+
+        .modal--no-data .desc li img {
+            margin-right: 10px;
+        }
+
+        .modal--info--list ul li {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+
+        .modal--info--list ul li .info--label {
+            width: 40%;
+        }
+
+        .modal--info--list ul li .info--value {
+            width: 60%;
+        }
+
+        /*로테이션 탭 추가*/
+        .lota--info {
+            padding-top: 10px;
+            text-align: center;
+            color: dimgray;
+        }
+
+        .lota--wrap {
+            padding-top: 30px;
+            padding-bottom: 10px;
+        }
+
+        .lota--title {
+            display: flex;
+            text-align: center;
+        }
+
+        .lota--label--select {
+            background-color: rgba(255, 198, 69, 0.8);
+            font-weight: 700;
+            border-radius: 10px;
+        }
+
+        .lota--value {
+            width: 25%;
+            text-align: center;
+        }
+
+        /*로테이션 끝*/
+        .modal--info--list .btn--wrapper {
+            margin-top: 30px;
+        }
+
+        .modal--stad--notice {
+            font-size: 14px;
+        }
+
+        .modal--stad--notice pre {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .modal--apply--parking input {
+            width: 100%;
+        }
+
+        .modal--apply--parking .btn--wrapper {
+            margin-top: 20px;
+        }
+
+        .modal--apply--parking .modal--parking--msg {
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #eee;
+            border-radius: 15px;
+        }
+
+        .modal--apply--parking .modal--parking--msg p {
+            font-size: 12px;
+        }
+
+        .modal--apply--parking .modal--parking--msg span {
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
+
+        @media (min-width: 1024px) {
+            .modal--container.isFull .modal--wrapper {
+                position: initial;
+                height: 100%;
+                width: 100%;
+            }
+
+            .modal--container.isFull .modal--body {
+                overflow-y: initial;
+                width: 540px;
+                margin: 0 auto;
+            }
+
+            .modal--wrapper {
+                width: 540px;
+                height: 540px;
+                right: 0;
+                top: 50%;
+                bottom: 50%;
+                margin: auto;
+                border-radius: 20px;
+                transform: initial;
+            }
+
+            .modal--wrapper.isFull {
+                border-radius: 20px;
+                width: 540px;
+                height: 540px;
+            }
+
+            #manager_home .modal--wrapper.isFull .modal--body {
+                width: 540px;
+            }
+
+            .modal--no-data .intro-wrapper {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .modal--no-data .intro-box .intro {
+                font-size: 14px;
+            }
+
+            .modal--no-data .desc li p {
+                font-size: 14px;
+            }
+
+            /* .modal--wrapper {
+		max-width: 540px;
+		height: fit-content;
+		padding-bottom: 100px;
+		position: fixed;
+		max-height: 540px;
+	}
+	.modal--wrapper--full {
+		max-width: 540px;
+		position: fixed;
+		max-height: 540px;
+	}
+	.modal--wrapper.isFull {
+		max-width: 540px;
+		height: fit-content;
+		padding-bottom: 100px;
+		position: fixed;
+		border-radius: 20px;
+	} */
+            .modal--wrapper.isFull .modal--bottom .modal--button .btn {
+                border-radius: 0 0 20px 20px;
+            }
+
+            .modal--wrapper.isFullScroll {
+                border-radius: 20px;
+                height: 100%;
+                max-width: 540px;
+                max-height: 100%;
+                margin-top: 50px;
+                top: initial;
+                bottom: initial;
+            }
+
+            .modal--mask.white--mask {
+                background-color: white;
+            }
+
+            .my--style--title {
+                font-size: 14px;
+                margin: 0;
+                background-color: white;
+                color: #333;
+                text-align: center;
+                padding: 20px;
+                margin-bottom: 30px;
+                width: 100%;
+                display: block;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+
+        /*BUTTON*/
+        .btn.white {
+            background-color: #FFFFFF;
+            color: #2a2a2a;
+        }
+
+        .btn.yellow {
+            background-color: #FFC645;
+            color: #2a2a2a;
+        }
+
+        .btn.kakaoYellow {
+            background-color: #fae100;
+            color: #2a2a2a;
+        }
+
+        .btn.grey {
+            background-color: #eeeeee;
+            color: #2a2a2a;
+        }
+
+        .btn.red {
+            background-color: #FF5D5D;
+            color: white;
+        }
+
+        .btn.lg {
+            line-height: 54px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        .btn.md {
+            line-height: 44px;
+            font-size: 14px;
+            padding: 0 10px;
+        }
+
+        .btn.sm {
+            line-height: 32px;
+            font-size: 12px;
+            padding: 0 10px;
+        }
+
+        .btn.full {
+            width: 100%;
+        }
+
+        .btn.db {
+            width: 50%;
+        }
+
+        .btn.long {
+            width: 100%;
+        }
+
+        .btn.norm {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .btn.fit {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .btn.rounded {
+            border-radius: 50px;
+        }
+
+        .btn.radius20 {
+            border-radius: 0 0 20px 20px;
+        }
+
+        .btn.isDisabled {
+            background-color: #eeeeee;
+            color: #999;
+        }
+
+        .btn.action {
+            width: 70%;
+            margin: 0 auto;
+            border-radius: 100px;
+            line-height: initial;
+        }
+
+        .btn.action p {
+            font-size: 16px;
+        }
+
+        .btn.action span {
+            font-size: 11px;
+        }
+
+        @media (min-width: 1024px) {
+            .btn.action {
+                width: 320px;
+            }
+        }
+
+
+
+        /*ANIMATION*/
+        .fighting:active .raisedFist {
+            animation: bounce-in .5s;
+        }
+
+        /* end modal 인풋박스 css */
+        /* end css */
+    </style>
+</head>
+
+<body>
+    <div class="container" id="plabContainer">
+        <div class="navbar" id="navbar-main">
+            <div class="navContainer home">
+                <div class="newLogo">
+                    <a href="/"><img src="https://plab-football.s3.amazonaws.com/static/img/logo.svg" alt="플랩풋볼"></a>
+                </div>
+                <div class="top--menu" id="userMenu">
+                    <div class="mainTab">
+                        <a href="/mypage/myplab/">
+                            <img src="https://plab-football.s3.amazonaws.com/static/img/ic_mymatch.svg" alt="나의 매치">
+                            <transition name="fade" v-if="waitReviews">
+                                <div class="filter__toast">알림메시지응용</div>
+                            </transition>
+                        </a>
+                        <a href="/mypage/">
+                            <img src="https://plab-football.s3.amazonaws.com/static/img/ic_my.svg" alt="나의 플랩풋볼">
+                        </a>
+                    </div>
+
+                    <div id="sidebar-main-trigger" class="icon">
+                        <div class="moreIconWrap">
+                            <div class="moreIcon"></div>
+                            <div class="moreIcon"></div>
+                            <div class="moreIcon"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar main" id="sidebar-main">
+            <div class="wrapper">
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="/about/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about.svg" alt="플랩풋볼 소개">
+                                <span>플랩풋볼 소개</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/manager/apply/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_about_manager.svg"
+                                    alt="플랩풋볼 매니저 지원">
+                                <span>매니저 지원</span>
+                            </a>
+                        </li>
+                        <li class="separateLine"></li>
+                        <li>
+                            <a href="/cs/6/topics/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_notice.svg" alt="공지사항">
+                                <span>공지사항</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/cs/">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_help.svg" alt="자주 묻는 질문">
+                                <span>자주 묻는 질문</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://pf.kakao.com/_xmxhlAC">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_1on1.svg" alt="1:1 문의">
+                                <span>1:1 문의</span>
+                            </a>
+                        </li>
+                        <li class="separateLine"></li>
+                        <p class="sideSub">SNS에서 플랩풋볼의 스토리를 들어보세요</p>
+                        <li class="submenu">
+                            <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                                target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_fb.svg" alt="플랩풋볼 페이스북">
+                                <span>페이스북</span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_fbgroup.svg"
+                                    alt="플랩풋볼 페이스북 그룹">
+                                <span>페이스북 그룹</span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="https://www.instagram.com/plabfootball/" target="_blank">
+                                <img src="https://plab-football.s3.amazonaws.com/static/img/ic_ig.svg" alt="플랩풋볼 인스타그램">
+                                <span>인스타그램</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="app">
+            <div class="navigation--container">
+                <div class="navigation--wrapper">
+                    <div class="navigation--item">
+                        <a class="selected" href="/">소셜 매치</a>
+                        <a href="/rental/">
+                            구장 예약
+                            <span class="is_new">N</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel--container">
+                <ul class="carousel--wrapper slick-initialized slick-slider slick-dotted">
+                    <!-- 슬라이드 main 배너 -->
+                    <div class="slick-list draggable">
+                        <div class="slick-track"
+                            style="opacity: 1; width: 10384px; transform: translate3d(-1888px, 0px, 0px);">
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img">
+                                        <img src="images/img1.gif" class="carousel--img_m">
+                                        <img src="images/img1.gif" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+                            <li class="carousel--hero slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1"
+                                role="tabpanel" id="slick-slide10" aria-describedby="slick-slide-control10"
+                                style="width: 944px;">
+                                <a href="#" tabindex="-1">
+                                    <div class="carousel--img">
+                                        <img src="images/img2.gif" class="carousel--img_m">
+                                        <img src="images/img2.gif" class="carousel--img_pc">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--hero slick-slide slick-current slick-active" data-slick-index="1"
+                                aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide11"
+                                aria-describedby="slick-slide-control11" style="width: 944px;"><a href="#" tabindex="0">
+                                    <div class="carousel--img">
+                                        <img src="images/img3.gif" class="carousel--img_m">
+                                        <img src="images/img3.gif" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+
+                            <!-- main 사진을 중앙에 보여주고 그 외 사진은 숨겨놓음 -->
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="5" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img"><img src="images/img1.gif" class="carousel--img_m">
+                                        <img src="images/img1.gif" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="6" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img"><img src="images/img2.gif" class="carousel--img_m">
+                                        <img src="images/img2.gif" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+                            <li class="carousel--hero slick-slide slick-cloned" data-slick-index="7" aria-hidden="true"
+                                tabindex="-1" style="width: 944px;"><a href="#" tabindex="-1">
+                                    <div class="carousel--img"><img src="images/img3.gif" class="carousel--img_m">
+                                        <img src="#" class="carousel--img_pc">
+                                    </div>
+                                </a></li>
+
+                        </div>
+                    </div>
+                    <ul class="slick-dots" style="" role="tablist">
+                        <li class="" role="presentation">
+                            <button type="button" role="tab" id="slick-slide-control10" aria-controls="slick-slide10"
+                                aria-label="1 of 3" tabindex="-1">1</button>
+                        </li>
+                        <li role="presentation" class="slick-active"><button type="button" role="tab"
+                                id="slick-slide-control11" aria-controls="slick-slide11" aria-label="2 of 3"
+                                tabindex="0" aria-selected="true">2</button>
+                        </li>
+                        <li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control12"
+                                aria-controls="slick-slide12" aria-label="3 of 3" tabindex="-1">3</button>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="main--match--container">
+                 <div id="dateNav" class="sub-header">
+                    <div class="tabWrap">
+                        <div class="swipe-tabs">
+                             <ul class="swipe-tab">
+                                 <li v-for="(day, index) in matchDays" :key="day.id" class="dateWrap slick-slide"
+                                      :class="{ isActive: day.is_current == true, 'slick-active': day.is_current == true, 'slick-slide': day.is_current == true, isSat: day.yoil == '토', isSun: day.yoil == '일' }"
+                                      @click="dateMatches(day.year+'-'+day.month+'-'+day.day, index)">
+                                      <p class="">[[ day.day ]]</p>
+                                      <span class="">[[ day.yoil ]]</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__filter">
+                    <div class="main__match-filter">
+                        <ul>
+                            <li><a class="match-filter-item--active">내 경기장</a></li>
+                            <li><a class="">서울</a></li>
+                            <li><a class="">경기</a></li>
+                            <li><a class="">인천</a></li>
+                            <li><a class="">대전</a></li>
+                            <li><a class="">대구</a></li>
+                            <li><a class="">부산</a></li>
+                            <li><a class="">울산</a></li>
+                            <li><a class="">광주</a></li>
+                            <li><a class="">충북</a></li>
+                            <li><a class="">경북</a></li>
+                            <li><a class="">전북</a></li>
+                            <li><a class="">충남</a></li>
+                            <li><a class="">경남</a></li>
+                        </ul>
+                    </div>
+                    <div class="main--match--filter">
+                        <div class="filter--results">
+                            <p style=""><strong>111</strong>개의 매치</p>
+                        </div>
+                        <div class="filter--wrapper" id="modalBtn">
+                            <!--<button type="button" id="modalBtn" class="btn btn-primary">매치</button>-->
+                            <span @click="showFilterMatch = !showFilterMatch" v-if="noFilters">모든 매치</span>
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+                <div class="list--match-schedule--container">
+                    <ul>
+                        <!---->
+                        <li class="list--match-schedule--item"><a>
+                                <div class="list--match-schedule__time">
+                                    <p>10:00</p>
+                                </div>
+                                <div class="list--match-schedule__info">
+                                    <!---->
+                                    <!---->
+                                    <div class="match-list__title">
+                                        <h3>서초 스타 풋살장 A면</h3>
+                                        <!---->
+                                    </div>
+                                    <div class="label--match-option"><span class="match--option isMix">남녀모두</span>
+                                        <span>6vs6</span>
+                                        <span>3파전</span> <span>일반 (Lv 1~5)</span>
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="list--match-schedule__status">
+                                    <div class="match-status isFull">
+                                        <p>마감</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                        </li>
+                        <li class="list--match-schedule--item"><a>
+                                <div class="list--match-schedule__time">
+                                    <p>10:00</p>
+                                </div>
+                                <div class="list--match-schedule__info">
+                                    <!---->
+                                    <!---->
+                                    <div class="match-list__title">
+                                        <h3>용산 아이파크몰 (6구장) *주차1자리*</h3>
+                                        <!---->
+                                    </div>
+                                    <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                        <span>6vs6</span>
+                                        <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="list--match-schedule__status">
+                                    <div class="match-status isFull">
+                                        <p>마감</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                        </li>
+                        <li class="list--match-schedule--item"><a>
+                                <div class="list--match-schedule__time">
+                                    <p>10:00</p>
+                                </div>
+                                <div class="list--match-schedule__info">
+                                    <!---->
+                                    <!---->
+                                    <div class="match-list__title">
+                                        <h3>시흥 루프탑필드 (시흥 프리미엄 아울렛) </h3>
+                                        <!---->
+                                    </div>
+                                    <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                        <span>6vs6</span>
+                                        <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="list--match-schedule__status">
+                                    <div class="match-status isHurry">
+                                        <p>마감임박!</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                        </li>
+                        <li class="list--match-schedule--item"><a>
+                                <div class="list--match-schedule__time">
+                                    <p>22:00</p>
+                                </div>
+                                <div class="list--match-schedule__info">
+                                    <!---->
+                                    <!---->
+                                    <div class="match-list__title">
+                                        <h3>고양 화전 드림 풋살장 B면</h3>
+                                        <!---->
+                                    </div>
+                                    <div class="label--match-option"><span class="match--option isMen">남성</span>
+                                        <span>6vs6</span>
+                                        <span>매치</span> <span>일반 (Lv 1~5)</span>
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="list--match-schedule__status">
+                                    <div class="match-status isHurry">
+                                        <p>마감임박!</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+    </div>
+        <!-- 모달 팝업 -->
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal--wrapper isFull">
+                        <div class="modal--header">
+                            <p class="modal--title">카테고리</p>
+                            <p class="modal--close" id="modalClose">취소</p>
+                        </div>
+                        <div class="modal-body">
+                            <div class="filter--region">
+                                <div class="filter--region--item">
+                                    <ul class="filter--list">
+                                        <h4>성별</h4>
+                                        <li>
+                                            <input type="checkbox" class="filterCheck grey" id="sex_m" value="1">
+                                            <label for="sex_m" class="checkLabel">남성</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="filterCheck grey" id="sex_w" value="-1">
+                                            <label for="sex_w" class="checkLabel">여성</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="filterCheck grey" id="sex_u" value="0">
+                                            <label for="sex_u" class="checkLabel">남녀 모두</label>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="filter--list">
+                                        <h4>레벨</h4>
+                                        <li>
+                                            <input type="checkbox" class="filterCheck grey" id="level_beginner"
+                                                value="1">
+                                            <label for="level_beginner" class="checkLabel">초급 (Lv 1~2)</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="filterCheck grey" id="level_mid" value="2">
+                                            <label for="level_mid" class="checkLabel">중급 (Lv 3~5)</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="filterCheck grey" id="level_every" value="0">
+                                            <label for="level_every" class="checkLabel">일반 (Lv 1~5)</label>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal--bottom">
+                            <div class="modal--button">
+                                <span class="btn full yellow lg" id="saveBtn" data-dismiss="modal">적용하기</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            // var dialogOpen = false, lastFocus, dialog, okbutton, pagebackground;
+
+            // function showDialog(el) {
+            // lastFocus = el || document.activeElement;
+            // toggleDialog('show');
+            // }
+            // function hideDialog(el) {
+            // toggleDialog('hide');
+            // }
+
+            // function toggleDialog(sh) {
+            // dialog = document.getElementById("myModal");
+            // okbutton = document.getElementById("saveBtn");
+            // pagebackground = document.getElementById("bg");
+
+            // if (sh == "show") {
+            // dialogOpen = true;
+
+            // // 다이얼로그 표시
+            // dialog.style.display = 'block';
+
+            // // 다이얼로그 표시 이후, 그 안의 요소에 포커스하기
+            // okbutton.focus();
+
+            // // "숨겨질" 콘텐츠로에서 포커스가 나간 *후에* 배경을 숨깁니다.
+            // pagebackground.setAttribute("aria-hidden", "true");
+
+            // } else {
+            // dialogOpen = false;
+            // dialog.style.display = 'none';
+            // pagebackground.setAttribute("aria-hidden", "false");
+            // lastFocus.focus();
+            // }
+            // }
+
+            // document.addEventListener("focus", function (event) {
+
+            // var d = document.getElementById("myModal");
+
+            // if (dialogOpen && !d.contains(event.target)) {
+            // event.stopPropagation();
+            // d.focus();
+            // }
+
+            // }, true);
+
+
+            // document.addEventListener("keydown", function (event) {
+            // if (dialogOpen && event.keyCode == 27) {
+            // toggleDialog('hide');
+            // }
+            // }, true);
+
+
+            // // 적용하기 버튼 동작하는지 확인
+            // $('#saveBtn').click(function () {
+            // console.log("적용하기 버튼 동작!");
+            // });
+
+            // $('#filter--wrapper').click(function (e) {
+            // e.preventDefault();
+            // $('#myModal').modal("show");
+            // $("#dateNav").css("z-index", "1");
+
+            // // $("body").css({ "overflow": "hidden"});
+            // //document.body.style.overflow = 'hidden'
+            // return
+            // });
+
+            // modal 안의 버튼이 동작하지 않는 문제
+            // $("#myModal").on("show.bs.modal", function () {
+            // //$(document).off('focusin.modal');
+            // $("#myModal").focus();
+            // });
+
+
+
+            // $('#slider-div').slick({
+            // slide: 'div', //슬라이드 되어야 할 태그 ex) div, li
+            // infinite: true, //무한 반복 옵션
+            // slidesToShow: 4, // 한 화면에 보여질 컨텐츠 개수
+            // slidesToScroll: 1, //스크롤 한번에 움직일 컨텐츠 개수
+            // speed: 100, // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
+            // arrows: true, // 옆으로 이동하는 화살표 표시 여부
+            // dots: true, // 스크롤바 아래 점으로 페이지네이션 여부
+            // autoplay: true, // 자동 스크롤 사용 여부
+            // autoplaySpeed: 10000, // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
+            // pauseOnHover: true, // 슬라이드 이동 시 마우스 호버하면 슬라이더 멈추게 설정
+            // vertical: false, // 세로 방향 슬라이드 옵션
+            // prevArrow: "<button type='button' class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
+            // nextArrow: "<button type='button' class='slick-next'>Next</button>", // 다음 화살표 모양 설정
+            // dotsClass: "slick-dots", //아래 나오는 페이지네이션(점) css class 지정
+            // draggable: true, //드래그 가능 여부
+
+            // responsive: [ // 반응형 웹 구현 옵션
+            // {
+            // breakpoint: 960, //화면 사이즈 960px
+            // settings: {
+            // //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+            // slidesToShow: 3
+            // }
+            // },
+            // {
+            // breakpoint: 768, //화면 사이즈 768px
+            // settings: {
+            // //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+            // slidesToShow: 2
+            // }
+            // }
+            // ]
+
+            // });
+
+        </script>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-cookies@1.7.0/vue-cookies.js"></script>
+        
+        <script type="text/javascript">
+
+            var currentDate = '';
+            //var is_first = false;
+            currentDate = moment().format('YYYY-MM-D');
+
+            // vue 시작?
+            var home = new Vue({
+                delimiters: ['[[', ']]'],
+                el: '#app',
+                data: {
+                    currentDate: '',
+                    matchDays: [],
+                    currentMatches: [],
+                    currentMatchesNum: []
+                },
+                created: function () {
+                    this.currentDate = currentDate
+                    for (var i = 0; i < 14; i++) {
+                        var addDate = moment().add(i, 'days');
+                        var year = addDate.format('YYYY')
+                        var month = addDate.format('MM')
+                        var day = addDate.format('D')
+                        var weeks = ['일', '월', '화', '수', '목', '금', '토']
+                        var yoil = weeks[addDate.weekday()]
+                        var is_current = false
+                        if (this.currentDate == addDate.format('YYYY-MM-D')) { is_current = true }
+                        this.matchDays.push({
+                            year: year,
+                            month: month,
+                            day: day,
+                            yoil: yoil,
+                            is_current: is_current
+                        })
+                    }
+
+                    //this.fetchMatches()
+                    this.fetchDateSwipe()
+                },
+                methods:{
+                    fetchDateSwipe(){
+                        var currentDateSlide = this.matchDays.findIndex(i => i.is_current == true)
+                        $(document).ready(function () {
+                            $('.swipe-tab').slick({
+                                dots: false,
+                                infinite: false,
+                                arrows: true,
+                                speed: 300,
+                                slidesToShow: 7,
+                                slidesToScroll: 7,
+                                swipeToSlide: true,
+                                // focusOnSelect: true,
+                                initialSlide: currentDateSlide,
+                                responsive: [
+                                    {
+                                        breakpoint: 1024,
+                                        settings: {
+                                            arrows: false
+                                        }
+                                    }
+                                ]
+                            });
+                        });
+                    },
+                    dataMatches: function(getDate, index){
+                        this.currentDate = getDate
+                        //this.fetchMatches()
+                        var beforeCurrent = this.matchDays.findIndex(i => i.is_current == true)
+
+                        this.matchDays[beforeCurrent].is_current = false
+                        this.matchDays[index].is_current = true
+                    },
+                },
+                watch: {
+
+                },
+                computed:{
+
+                }
+
+            });
+
+        </script>
+
+        <script>
+            /*
+                        $(document).ready(function () {
+            
+                            //모달창
+                            modal = document.getElementById("myModal");
+                            // 1. 모달 열기 버튼
+                            modalOpenBtn = document.getElementById("modalBtn");
+                            // 2. 모달 닫기 버튼
+                            modalCloseBtn = document.getElementById("modalClose");
+                            // 3. 모달안 적용하기 버튼
+                            modalSubmitBtn = document.getElementById("saveBtn");
+            
+                            // 1. 모달 열기
+                            modalOpenBtn.onclick = () => {
+                                modal.style.display = "flex";
+                                $(".modal").css("max-width", "none");
+                            };
+            
+                            // 2. 모달 닫기
+                            modalCloseBtn.onclick = () => {
+                                modal.style.display = "none";
+                            };
+            
+                            // 3. 모달안 적용하기 버튼
+                            modalSubmitBtn.onclick = (e) => {
+                                // 1.모달바디 가져오기
+                                // 2.가져온 것들 중 input[checkbox] 체크된 내용 가져오기
+                                // 3. 보내서 확인하기
+            
+                                var checkList = [];
+                                // var modal = $(".modal-body");
+                                // 1. 클래스 이름이 filterCheck grey이고, input checkbox 인 애들 찾기
+                                $('input:checkbox[class="filterCheck grey"]').each(function () {
+                                    // 체크된 true 의 id를 가져옴
+                                    if (this.checked == true) {
+                                        //console.log(this.id);
+                                        //console.log(this.value);
+                                        checkList.push(this.id);
+                                    }
+                                });
+                                // 체크된 저장리스트 출력
+                                console.log(checkList);
+            
+            
+            
+            
+                            };
+            
+            
+                            //------------------------------------------]
+                            // 날짜 슬라이더 수정
+                            // 현재 날짜 얻어온 후, 2주(14일)의 날짜정보 가져오기.
+                            var currentDate = moment().format('YYYY-MM-D');
+                            //var matchDays = [{}];
+                            var matchDays = [];
+                            for (var i = 0; i < 14; i++) {
+                                var addDate = moment().add(i, 'days');
+                                var year = addDate.format('YYYY')
+                                var month = addDate.format('MM')
+                                var day = addDate.format('D')
+                                var weeks = ['일', '월', '화', '수', '목', '금', '토']
+                                var yoil = weeks[addDate.weekday()]
+                                var is_current = false
+                                if (this.currentDate == addDate.format('YYYY-MM-D')) {
+                                    is_current = true
+                                } matchDays.push({ year: year, month: month, day: day, yoil: yoil, is_current: is_current })
+                            } console.log("1"); console.log(currentDate); console.log("2"); console.log(matchDays); var
+                                currentDateSlide = matchDays.findIndex(i => i.is_current == true)
+                            console.log("currentDateSlide : " + currentDateSlide);
+            
+            
+                            $(".swipe-tab").not('.slick-initialized').slick({
+                                dots: false,
+                                prevArrow: $('.slick-prev slick-arrow slick-disabled'),
+                                nextArrow: $('.slick-next slick-arrow slick-disabled'),
+                                infinite: true,
+                                initialSlide: 1,
+                                speed: 300,
+                                slidesToShow: 7,
+                                slidesToScroll: 7,
+                                swipeToSlide: true,
+                                // focusOnSelect: true,
+                                initialSlide: currentDateSlide,
+                                responsive: [
+                                    {
+                                        breakpoint: 1024,
+                                        settings: {
+                                            arrows: false
+                                        }
+                                    }
+                                ]
+                            });
+            
+                        });
+            */
+
+        </script>
+
+        <footer id="footer">
+            <div class="footerWrap">
+                <div class="footerNav">
+                    <ul>
+                        <h3>매치</h3>
+                        <li>
+                            <a href="/">모든 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/1/matches/">여성 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/2/matches/">남녀모두 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/22/matches/">초급 매치</a>
+                        </li>
+                        <li>
+                            <a href="/explore/3/matches/">중급 매치</a>
+                        </li>
+                    </ul>
+                    <ul class="footerDul">
+                        <h3>서비스 지역</h3>
+                        <li>
+                            <a href="/region/1/matches/">서울</a>
+                        </li>
+                        <li>
+                            <a href="/region/3/matches/">경기</a>
+                        </li>
+                        <li>
+                            <a href="/region/8/matches/">인천</a>
+                        </li>
+                        <li>
+                            <a href="/region/7/matches/">대전·충청</a>
+                        </li>
+                        <!-- <li>
+                          <a href="/region/13/matches/">충북</a>
+                        </li> -->
+                        <li>
+                            <a href="/region/2/matches/">대구·경북</a>
+                        </li>
+                        <li>
+                            <a href="/region/11/matches/">울산</a>
+                        </li>
+                        <li>
+                            <a href="/region/10/matches/">부산</a>
+                        </li>
+                        <li>
+                            <a href="/region/6/matches/">광주</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h3>플랩풋볼</h3>
+                        <li>
+                            <a href="/about/">플랩풋볼 소개</a>
+                        </li>
+                        <li>
+                            <a href="/manager/apply/">매니저 지원</a>
+                        </li>
+                        <li>
+                            <a href="https://www.notion.so/LET-S-PLAB-4718d190580047e6ab6ecb34a0dac215">채용</a>
+                        </li>
+                        <li>
+                            <a href="/cs/6/topics/">공지사항</a>
+                        </li>
+                        <li>
+                            <a href="/cs/">자주 묻는 질문</a>
+                        </li>
+                        <li>
+                            <a href="http://pf.kakao.com/_xmxhlAC">1:1 문의</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h3>소셜 미디어</h3>
+                        <li>
+                            <a href="https://www.instagram.com/plabfootball/" target="_blank">인스타그램</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/plabfootball/?eid=ARCbIV7J0pdkC-eNTR8kOKz3Ce0WYjnpR9McmLlOQheslzEURQrjx5wYdcwv0SAVs3DofNPxG6_iaY_f"
+                                target="_blank">페이스북</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/groups/plabfootball/" target="_blank">페이스북 그룹</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="company">
+                    <h2><a href="/">plabfootball.com</a></h3>
+                        <p>풋살하고 싶을 땐, 플랩풋볼</p>
+                        <span><a href="/term/">이용 약관 | </a><a href="/privacy/">개인정보 처리방침 | </a><a
+                                href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6508100575">사업자 정보
+                                확인</a></span><br>
+                        <span>플랩풋볼 | 서울특별시 마포구 잔다리로31 제우피스빌딩 2층 | contact@plabfootball.com</span>
+                        <span>주식회사 마이플레이컴퍼니 | 사업자번호 650-81-00575 | 대표 강동규 | 통신판매업 신고 2020-서울마포-4411</span>
+                        <span class="copyright">Copyright <b>PLAB</b> All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
